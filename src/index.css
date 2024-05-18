@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --dark-50: #fafafa;
+  --dark-100: #f5f5f5;
+  --dark-200: #e5e5e5;
+  --dark-300: #d4d4d4;
+  --dark-400: #a3a3a3;
+  --dark-500: #737373;
+  --dark-600: #525252;
+  --dark-700: #404040;
+  --dark-800: #262626;
+  --dark-900: #171717;
+  --dark-950: #0a0a0a;
+}
+
+.dark {
+  --dark-50: #0a0a0a;
+  --dark-100: #171717;
+  --dark-200: #262626;
+  --dark-300: #404040;
+  --dark-400: #525252;
+  --dark-500: #737373;
+  --dark-600: #a3a3a3;
+  --dark-700: #d4d4d4;
+  --dark-800: #e5e5e5;
+  --dark-900: #f5f5f5;
+  --dark-950: #fafafa;
+}
+
+.app {
+  color: var(--dark-950);
+  background-color: var(--dark-50);
+}
