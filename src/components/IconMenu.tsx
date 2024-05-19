@@ -1,14 +1,12 @@
-import { GoSun } from 'react-icons/go';
 import { RiShoppingCart2Line } from 'react-icons/ri';
 import { VscAccount } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
+import DarkMode from './DarkMode';
 
 function IconMenu() {
   return (
     <div className='header-icons flex items-center gap-4 justify-self-end'>
-      <span className='block'>
-        <GoSun className='header-icon text-2xl' />
-      </span>
+      <DarkMode />
       <Link to='/account'>
         <span className=''>
           <VscAccount className='header-icon text-2xl' />

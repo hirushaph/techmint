@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --dark-50: #fafafa;
+  --dark-50: #fff;
   --dark-100: #f5f5f5;
   --dark-200: #e5e5e5;
   --dark-300: #d4d4d4;
@@ -32,5 +32,46 @@
 
 .app {
   color: var(--dark-950);
+}
+
+body {
+  color: var(--dark-900);
   background-color: var(--dark-50);
+}
+
+::placeholder {
+  color: var(--dark-500) !important;
+}
+
+/* Dark mode animation css */
+
+.rotate-effect {
+  animation: rotate 0.6s forwards;
+}
+
+.rotateback-effect {
+  animation: backrotate 0.9s forwards;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes backrotate {
+  0% {
+    transform: rotate(-180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.darkmode-icon {
+  position: absolute;
+  transition: opacity 0.6s ease-in-out;
 }

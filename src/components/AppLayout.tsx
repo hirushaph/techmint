@@ -2,7 +2,7 @@ import Header from './Header';
 
 function AppLayout() {
   return (
-    <div className='app dark'>
+    <div className='app'>
       <Header />
     </div>
   );
