@@ -5,7 +5,7 @@ function NavItem({ label, link }: NavLinkType) {
   return (
     <li>
       <NavLink
-        className='text-dark-900 transition duration-300 hover:text-blue-600'
+        className='transition-text text-dark-900  hover:text-blue-600'
         to={link}
       >
         {label}

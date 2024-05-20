@@ -5,7 +5,11 @@ import { toggleDarkMode } from '../../redux/settingSlice';
 import { useEffect, useState } from 'react';
 import { HiOutlineMoon } from 'react-icons/hi';
 
-function DarkMode() {
+type DarkModeProps = {
+  className?: string;
+};
+
+function DarkMode({ className }: DarkModeProps) {
   const dispatch = useDispatch();
   const { darkmode } = useSelector((state: RootStateType) => state.setting);
   const [showAnimation, setShowAnimation] = useState(false);
@@ -28,7 +32,7 @@ function DarkMode() {
   return (
     <div
       onClick={handleDarkMode}
-      className=' relative flex w-8 cursor-pointer items-center justify-center bg-blue-400'
+      className={` relative flex w-8 cursor-pointer items-center justify-center bg-blue-400 ${className}`}
     >
       <span
         className={`darkmode-icon ${showAnimation && darkmode ? 'rotateback-effect' : 'opacity-0'} ${darkmode && 'opacity-100'} ${!darkmode && 'rotate-effect'}`}
