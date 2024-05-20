@@ -1,10 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import { NavLinkType } from '../types/navlinks';
+import { NavLinkType } from '../../types/navlinks';
 
 function NavItem({ label, link }: NavLinkType) {
   return (
     <li>
-      <NavLink className='text-dark-900' to={link}>
+      <NavLink
+        className='text-dark-900 transition duration-300 hover:text-blue-600'
+        to={link}
+      >
         {label}
       </NavLink>
     </li>

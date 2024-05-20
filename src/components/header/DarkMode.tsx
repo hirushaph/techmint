@@ -1,7 +1,7 @@
 import { GoSun } from 'react-icons/go';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootStateType } from '../redux/store';
-import { toggleDarkMode } from '../redux/settingSlice';
+import { RootStateType } from '../../redux/store';
+import { toggleDarkMode } from '../../redux/settingSlice';
 import { useEffect, useState } from 'react';
 import { HiOutlineMoon } from 'react-icons/hi';
 

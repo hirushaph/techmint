@@ -4,6 +4,9 @@ export default {
   darkMode: 'selector',
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'custom-2fr-1fr': '2fr 1fr',
+      },
       colors: {
         dark: {
           50: 'var(--dark-50)',

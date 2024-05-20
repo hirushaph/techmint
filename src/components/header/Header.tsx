@@ -7,11 +7,12 @@ function Header() {
   return (
     <header>
       {/* <div className='container mx-auto grid h-[70px] grid-cols-4 items-center'> */}
-      <div className='container mx-auto flex h-[70px] items-center gap-20'>
+      <div className='container mx-auto flex h-[80px] items-center px-4 lg:gap-20'>
         <Logo />
         <Search />
         <NavBar />
         <IconMenu />
+        <MobileHamburger />
       </div>
     </header>
   );
