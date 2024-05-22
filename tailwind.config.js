@@ -6,6 +6,7 @@ export default {
     extend: {
       aspectRatio: {
         slider: '12 / 5',
+        showcase: '12 / 6',
       },
       gridTemplateColumns: {
         'custom-2fr-1fr': '2fr 1fr',
