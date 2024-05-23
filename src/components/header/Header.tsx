@@ -29,7 +29,7 @@ function Header() {
             animate={{ translateX: 0 }}
             exit={{ translateX: 320 }}
             transition={{ type: 'just', stiffness: 100 }}
-            className=' fixed right-0 top-0 h-full w-[20rem] bg-dark-50 px-6 pt-16 shadow-sm'
+            className=' fixed right-0 top-0 z-50 h-full w-[20rem] bg-dark-50 px-6 pt-16 shadow-sm'
           >
             <div className='absolute left-4 top-4 rounded-full bg-blue-50 p-[0.2rem]'>
               <IoClose

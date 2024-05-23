@@ -16,3 +16,30 @@ export const images = [
     alt: 'image4',
   },
 ];
+
+export const products = [
+  {
+    id: '1',
+    image: '/public/black main.jpg',
+    name: 'Iphone 15 Pro Max',
+    price: 899,
+  },
+  {
+    id: '2',
+    image: '/public/naturl.jpg',
+    name: 'Iphone 15 Pro',
+    price: 799,
+  },
+  {
+    id: '3',
+    image: '/public/blue.jpg',
+    name: 'Iphone 15',
+    price: 699,
+  },
+  {
+    id: '4',
+    image: '/public/white.jpg',
+    name: 'Iphone 15 Pro',
+    price: 999,
+  },
+];

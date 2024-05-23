@@ -120,6 +120,19 @@ input[type='search']::-webkit-search-results-decoration {
   animation: tra 0.5s forwards;
 }
 
+.quickview-animation {
+  animation: quick 0.5s forwards;
+}
+
+@keyframes quick {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 @keyframes tra {
   0% {
     transform: translateY(200px);
@@ -127,4 +140,8 @@ input[type='search']::-webkit-search-results-decoration {
   100% {
     transform: translateY(0);
   }
+}
+
+.quickview {
+  transform: translate(-50%, -50%) !important;
 }

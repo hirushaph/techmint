@@ -26,6 +26,7 @@ export default {
           900: 'var(--dark-900)',
           950: 'var(--dark-950)',
         },
+        lightDark: 'rgba(0,0,0,0.2)',
       },
     },
   },
