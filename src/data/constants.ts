@@ -42,4 +42,10 @@ export const products = [
     name: 'Iphone 15 Pro',
     price: 999,
   },
+  {
+    id: '5',
+    image: '/public/white.jpg',
+    name: 'Iphone 15 Pro',
+    price: 999,
+  },
 ];

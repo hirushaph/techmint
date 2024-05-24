@@ -25,7 +25,7 @@ function Product({ product }: ProductProps) {
       <p className='ml-2 mt-2 text-[1rem] font-semibold md:ml-6 md:text-[1.1rem]'>
         {product.name}
       </p>
-      <p className='mt-2mt-1 ml-2 font-semibold text-blue-600'>
+      <p className='ml-2 mt-1 font-semibold  text-blue-600 md:ml-6'>
         ${product.price}
       </p>
 

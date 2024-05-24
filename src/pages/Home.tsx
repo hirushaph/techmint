@@ -1,12 +1,19 @@
-import Slider from '../features/home/components/FeatureProducts';
-import FeatureProducts from '../features/home/components/FeatureProducts';
-import PopularProducts from '../features/home/components/PopularProducts';
+import {
+  Categories,
+  FeatureProducts,
+  NewArrivels,
+  OffersSection,
+  PopularProducts,
+} from '../features/home';
 
 function Home() {
   return (
     <div className='container mx-auto px-4'>
       <FeatureProducts />
       <PopularProducts />
+      <OffersSection />
+      <NewArrivels />
+      <Categories />
     </div>
   );
 }

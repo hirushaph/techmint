@@ -25,7 +25,7 @@ function FeatureProducts() {
             prevEl: '.button-prev',
           }}
           modules={[Navigation, Autoplay]}
-          className='aspect-slider'
+          className='aspect-square md:aspect-slider'
           speed={800}
         >
           {images.map((image) => (
@@ -47,7 +47,7 @@ function FeatureProducts() {
         </Swiper>
       </div>
 
-      <div className='mt-7 flex justify-center gap-7'>
+      <div className='mt-7 flex flex-col justify-center gap-7 md:flex-row'>
         <div className='aspect-showcase w-full overflow-hidden rounded-3xl'>
           <img
             src='/public/watch.jpg'
