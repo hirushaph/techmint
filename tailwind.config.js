@@ -8,6 +8,8 @@ export default {
         slider: '12 / 5',
         showcase: '12 / 6',
         offer: '12 / 5',
+        category: '5 / 3',
+        verticle: '8 / 10',
       },
       gridTemplateColumns: {
         'custom-2fr-1fr': '2fr 1fr',
