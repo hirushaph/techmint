@@ -8,10 +8,10 @@ function PopularProducts() {
   return (
     <section className='my-16'>
       <Heading subtitle='our best selling products' title='popular products' />
-      <div className='mt-6 grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-16'>
+      <div className='mt-6 grid grid-cols-2 gap-6 md:grid-cols-3 md:gap-16 lg:grid-cols-4'>
         {/* Products Grid */}
         {updatedProducts.map((product) => (
-          <Product product={product} />
+          <Product key={product.id} product={product} />
         ))}
       </div>
     </section>

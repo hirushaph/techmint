@@ -1,0 +1,26 @@
+{
+  "sliders": [
+    {
+      "tagline": "New Arrivels",
+      "title": "Iphone 15 Series",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis vitae ullam enim suscipit delectus nesciunt repudiandae sapiente similique dolorum, reprehenderit",
+      "image": "/slider1.jpg"
+    },
+    {
+      "tagline": "New Arrivels",
+      "title": "Galaxy 24 Series",
+      "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis vitae ullam enim suscipit delectus nesciunt repudiandae sapiente similique dolorum, reprehenderit",
+      "image": "/slider1.jpg"
+    }
+  ],
+  "featured": [
+    {
+      "title": "Pixel Watch",
+      "image": "/pixel-watch.jpg"
+    },
+    {
+      "title": "Pixel 8",
+      "image": "/pixel-8.jpg"
+    }
+  ]
+}

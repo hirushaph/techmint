@@ -145,3 +145,33 @@ input[type='search']::-webkit-search-results-decoration {
 .quickview {
   transform: translate(-50%, -50%) !important;
 }
+
+.animate-text .tagline {
+  animation: rightToLeft 0.5s forwards;
+}
+
+.animate-text .title {
+  animation: rightToLeft 0.5s forwards;
+  animation-delay: 150ms;
+}
+
+.animate-text .description {
+  animation: rightToLeft 0.5s forwards;
+  animation-delay: 300ms;
+}
+
+.animate-text button {
+  animation: rightToLeft 0.5s forwards;
+  animation-delay: 450ms;
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
