@@ -1,14 +1,14 @@
 function Categories() {
   return (
     <section>
-      <div className='grid w-full grid-cols-3 gap-6'>
+      <div className='grid w-full grid-cols-1 gap-6 lg:grid-cols-3'>
         <div
           style={{
             background: `url(${'/public/mobile.jpg'})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-          className='row-span-2 flex items-end justify-between px-5 pb-3'
+          className='flex aspect-verticle items-end justify-between px-5 pb-8 lg:row-span-2 lg:aspect-auto'
         >
           <p className='text-3xl uppercase'>Mobile</p>
           <button className='border bg-white px-4 py-[0.6rem] text-sm uppercase shadow-sm'>

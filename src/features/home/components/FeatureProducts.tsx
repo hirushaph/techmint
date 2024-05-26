@@ -100,16 +100,16 @@ function FeatureProducts() {
         </Swiper>
       </div>
 
-      <div className='mt-7 flex flex-col justify-center gap-7 lg:flex-row'>
+      <div className=' mt-7 flex flex-col justify-center gap-7 lg:flex-row'>
         {featuredProducts.map((product) => (
           <div
             key={product.image}
-            className='relative aspect-showcase w-full overflow-hidden'
+            className='group relative aspect-showcase w-full overflow-hidden'
           >
             <img
               src={product.image}
               alt={product.title}
-              className='h-full w-full object-cover'
+              className='h-full w-full object-cover transition duration-500 group-hover:scale-110'
             />
             <div className='featured-text absolute top-0 flex h-full flex-col justify-center gap-16 px-10 py-6'>
               <h2 className='text-3xl font-semibold uppercase'>

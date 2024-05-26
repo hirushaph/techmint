@@ -11,7 +11,7 @@ function NewArrivels() {
           <li>Tablets</li>
           <li>Accessories</li>
         </ul>
-        <select id='products lg:hidden'>
+        <select id='products' className='lg:hidden'>
           <option value='phones'>Phones</option>
           <option value='tablets'>Tablets</option>
           <option value='accessories'>Accessories</option>

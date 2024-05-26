@@ -12,14 +12,14 @@ import {
 
 function Footer() {
   return (
-    <footer className='pt-12'>
-      <div className='container mx-auto grid w-full grid-cols-4 justify-items-center px-4'>
+    <footer className='mt-16 bg-dark-100 pt-12'>
+      <div className='container mx-auto grid w-full grid-cols-1 gap-16 px-4 pb-12 lg:grid-cols-4 lg:justify-items-center lg:gap-0'>
         {/* About Section */}
         <div className='justify-self-start'>
-          <h3 className='text-2xl'>TechMint</h3>
-          <p>Your trusted mobile phone store</p>
+          <h3 className='mb-2 text-2xl'>TechMint</h3>
+          <p className='mb-6'>Your trusted mobile phone store</p>
 
-          <div className='flex items-center gap-4'>
+          <div className='mb-6 flex items-center gap-4'>
             <span className='rounded-full border-2 p-2'>
               <IoLocationOutline className='text-xl' />
             </span>
@@ -29,7 +29,7 @@ function Footer() {
             </p>
           </div>
 
-          <div className='flex items-center gap-4'>
+          <div className='mb-6 flex items-center gap-4'>
             <span className='rounded-full border-2 p-2'>
               <LuPhone className='text-xl' />
             </span>
@@ -52,8 +52,8 @@ function Footer() {
 
         {/* Quick Menu */}
         <div>
-          <h3 className='text-2xl'>Quick Menu</h3>
-          <ul>
+          <h3 className='mb-4 text-xl uppercase'>Quick Menu</h3>
+          <ul className='flex flex-col gap-4'>
             {navLinks.map((item) => (
               <NavItem key={item.label} link={item.link} label={item.label} />
             ))}
@@ -62,8 +62,8 @@ function Footer() {
 
         {/* My Account */}
         <div>
-          <h3 className='text-2xl'>My Account</h3>
-          <ul>
+          <h3 className='mb-4 text-xl uppercase'>My Account</h3>
+          <ul className='flex flex-col gap-4'>
             {navLinks.map((item) => (
               <NavItem key={item.label} link={item.link} label={item.label} />
             ))}
@@ -72,7 +72,7 @@ function Footer() {
 
         {/* Follow Us */}
         <div>
-          <h3 className='text-2xl'>Follow Us</h3>
+          <h3 className=' mb-4 text-xl uppercase'>Follow Us</h3>
           <div>
             <RiFacebookCircleFill />
             <RiInstagramFill />
@@ -82,7 +82,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className='flex justify-center py-6'>
+      <div className='flex justify-center bg-dark-200 py-6'>
         <p>Copyright &copy; {new Date().getFullYear()} TechMint Store</p>
       </div>
     </footer>
