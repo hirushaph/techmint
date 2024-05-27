@@ -28,26 +28,6 @@ function Footer() {
               <span className='block'>12 Main Street, England</span>
             </p>
           </div>
-
-          <div className='mb-6 flex items-center gap-4'>
-            <span className='rounded-full border-2 p-2'>
-              <LuPhone className='text-xl' />
-            </span>
-            <p>
-              <span className='text-md block font-semibold'>Phone</span>
-              <span className='block'>+123 1234 12345</span>
-            </p>
-          </div>
-
-          <div className='flex items-center gap-4'>
-            <span className='rounded-full border-2 p-2'>
-              <MdAlternateEmail className='text-xl' />
-            </span>
-            <p>
-              <span className='text-md block font-semibold'>Email</span>
-              <span className='block'>contact@techmint.local</span>
-            </p>
-          </div>
         </div>
 
         {/* Quick Menu */}
@@ -72,12 +52,31 @@ function Footer() {
 
         {/* Follow Us */}
         <div>
-          <h3 className=' mb-4 text-xl uppercase'>Follow Us</h3>
+          <h3 className=' mb-4 text-xl uppercase'>Contact Us</h3>
           <div>
-            <RiFacebookCircleFill />
-            <RiInstagramFill />
-            <RiYoutubeFill />
-            <RiWhatsappFill />
+            <div className='mb-4 flex items-center gap-2'>
+              <span className='rounded-full border-2 p-2'>
+                <LuPhone className='text-md' />
+              </span>
+              <p>
+                <span className='block'>+123 1234 12345</span>
+              </p>
+            </div>
+
+            <div className='flex items-center gap-2'>
+              <span className='rounded-full border-2 p-2'>
+                <MdAlternateEmail className='text-md' />
+              </span>
+              <p>
+                <span className='block'>contact@techmint.local</span>
+              </p>
+            </div>
+            <div className='mt-6 flex gap-2'>
+              <RiFacebookCircleFill className='text-2xl' />
+              <RiInstagramFill className='text-2xl' />
+              <RiYoutubeFill className='text-2xl' />
+              <RiWhatsappFill className='text-2xl' />
+            </div>
           </div>
         </div>
       </div>

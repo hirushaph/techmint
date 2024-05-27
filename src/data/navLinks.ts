@@ -6,8 +6,8 @@ export const navLinks: NavLinkType[] = [
     link: '/',
   },
   {
-    label: 'Store',
-    link: '/store',
+    label: 'Shop',
+    link: '/shop',
   },
   {
     label: 'Offers',

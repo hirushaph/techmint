@@ -6,12 +6,14 @@ import { useState } from 'react';
 import DarkMode from './DarkMode';
 import { IoClose } from 'react-icons/io5';
 import { AnimatePresence, motion } from 'framer-motion';
+import TopBar from './TopBar';
 
 function Header() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
   return (
     <header>
+      <TopBar />
       <div className='container mx-auto flex h-[80px] items-center gap-20 px-4 '>
         <Logo />
         <Search />

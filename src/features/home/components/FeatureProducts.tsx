@@ -6,37 +6,41 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import { useEffect, useState } from 'react';
-import {
-  FeaturedProducts,
-  getFeatured,
-  getSliders,
-  Sliders,
-} from '../../../services/api';
+import { useState } from 'react';
+import { getFeatured, getSliders } from '../../../services/api';
+import { useQuery } from '@tanstack/react-query';
 
 function FeatureProducts() {
-  const [sliders, setSliders] = useState<Sliders>([]);
+  // const [sliders, setSliders] = useState<Sliders>([]);
   const [sliderIndex, setSliderIndex] = useState(0);
-  const [featuredProducts, setFeaturedProducts] = useState<FeaturedProducts>(
-    []
-  );
+  // const [featuredProducts, setFeaturedProducts] = useState<FeaturedProducts>(
+  //   []
+  // );
 
-  console.log(sliders);
+  const { data: sliders, isLoading: slidersLoading } = useQuery({
+    queryFn: () => getSliders(),
+    queryKey: ['sliders'],
+  });
 
-  useEffect(function () {
-    async function getSliderList() {
-      const sliderList = await getSliders();
-      setSliders(sliderList);
-    }
+  const { data: featured, isLoading: featuredLoading } = useQuery({
+    queryFn: () => getFeatured(),
+    queryKey: ['featured'],
+  });
 
-    async function getFeaturedList() {
-      const featured = await getFeatured();
-      setFeaturedProducts(featured);
-    }
+  // useEffect(function () {
+  //   async function getSliderList() {
+  //     const sliderList = await getSliders();
+  //     setSliders(sliderList);
+  //   }
 
-    getSliderList();
-    getFeaturedList();
-  }, []);
+  //   async function getFeaturedList() {
+  //     const featured = await getFeatured();
+  //     setFeaturedProducts(featured);
+  //   }
+
+  //   getSliderList();
+  //   getFeaturedList();
+  // }, []);
 
   function handleTransitionEnd(swiper) {
     setSliderIndex(swiper.realIndex);
@@ -44,7 +48,7 @@ function FeatureProducts() {
 
   return (
     <section className='mt-4'>
-      <div className='slider group relative h-full w-full overflow-hidden'>
+      <div className='slider group relative h-full w-full'>
         <Swiper
           slidesPerView={1}
           spaceBetween={0}
@@ -58,13 +62,19 @@ function FeatureProducts() {
             prevEl: '.button-prev',
           }}
           modules={[Navigation, Autoplay]}
-          className='aspect-square md:aspect-slider'
+          className='aspect-square bg-dark-100 md:aspect-slider'
           speed={800}
           onTransitionEnd={(swiper) => {
             handleTransitionEnd(swiper);
           }}
         >
-          {sliders &&
+          {slidersLoading && (
+            <div className='absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%]'>
+              Loading
+            </div>
+          )}
+          {!slidersLoading &&
+            sliders &&
             sliders.map((slider, index) => (
               <SwiperSlide key={slider.image} className=''>
                 <img
@@ -101,7 +111,7 @@ function FeatureProducts() {
       </div>
 
       <div className=' mt-7 flex flex-col justify-center gap-7 lg:flex-row'>
-        {featuredProducts.map((product) => (
+        {featured?.map((product) => (
           <div
             key={product.image}
             className='group relative aspect-showcase w-full overflow-hidden'
