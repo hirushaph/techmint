@@ -1,5 +1,7 @@
+import { ShopLayout } from '../features/shop';
+
 function Shop() {
-  return <div>Shop</div>;
+  return <ShopLayout />;
 }
 
 export default Shop;

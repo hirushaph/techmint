@@ -15,6 +15,7 @@ export default {
         'custom-2fr-1fr': '2fr 1fr',
         'custom-repeat': 'repeat(2, minmax(200px, 1fr))',
         'custom-category': '1fr 2fr',
+        'custom-shop': '1fr 3fr',
       },
       colors: {
         dark: {
