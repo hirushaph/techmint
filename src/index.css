@@ -223,3 +223,19 @@ input[type='search']::-webkit-search-results-decoration {
     transform: translateX(0);
   }
 }
+
+/* Checkbox */
+
+.checkbox-wrapper [type='checkbox']:checked + .fake-checkbox {
+  /* background-color: ; */
+}
+.checkbox-wrapper [type='checkbox']:hover + .fake-checkbox {
+  box-shadow: 0 0 0 3px white;
+}
+.checkbox-wrapper [type='checkbox']:focus-visible + .fake-checkbox {
+  box-shadow: 0 0 0 3px white;
+}
+.checkbox-wrapper [type='checkbox']:checked + .fake-checkbox .check-icon {
+  visibility: visible;
+  color: var(--dark-200);
+}
