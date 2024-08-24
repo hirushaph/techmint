@@ -1,7 +1,11 @@
 import Product from '../../../components/Product';
-import { products } from '../../../data/constants';
+import { ProductType } from '../../../types/types';
 
-function ShopItems() {
+type ShopItemsProps = {
+  products: ProductType[];
+};
+
+function ShopItems({ products }: ShopItemsProps) {
   return (
     <div>
       <div className='sort-by'>Sort By</div>
