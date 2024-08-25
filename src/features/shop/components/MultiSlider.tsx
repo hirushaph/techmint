@@ -7,6 +7,7 @@ type MultiSliderProps = {
   step?: number;
   startEl: string;
   endEl: string;
+  onPriceChange: (priceRange: [number, number]) => void;
 };
 
 function MultiSlider({
@@ -16,6 +17,7 @@ function MultiSlider({
   step,
   startEl,
   endEl,
+  onPriceChange,
 }: MultiSliderProps) {
   const [startFrom, setStartFrom] = useState(min);
   const [end, setEnd] = useState(max);
@@ -43,6 +45,8 @@ function MultiSlider({
       if (endElement) {
         endElement.textContent = String(Math.round(end));
       }
+
+      onPriceChange([startFrom, end]);
     },
     [end, max, min, name, startFrom]
   );

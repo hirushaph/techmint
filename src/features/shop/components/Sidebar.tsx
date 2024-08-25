@@ -4,11 +4,7 @@ import CategoryFilter from './CategoryFilter';
 import ColorFilter from './ColorFilter';
 import PriceFilter from './PriceFilter';
 
-type SidebarPropTypes = {
-  onPriceChange: (priceRange: [number, number]) => void;
-};
-
-function Sidebar({ onPriceChange }: SidebarPropTypes) {
+function Sidebar() {
   return (
     <aside>
       <PriceFilter />
