@@ -26,34 +26,432 @@
 
   "products": [
     {
-      "id": "1",
-      "image": "/public/black main.jpg",
-      "name": "Iphone 15 Pro Max",
-      "price": 899
+      "id": 1,
+      "name": "iPhone 14 Pro",
+      "price": 999.99,
+      "category": "Smartphones",
+      "brand": "Apple",
+      "variants": [
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Silver",
+            "hex": "#C0C0C0"
+          },
+          "price": 999.99,
+          "stock": 30
+        },
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Space Black",
+            "hex": "#1C1C1C"
+          },
+          "price": 1099.99,
+          "stock": 20
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Deep Purple",
+            "hex": "#4B0082"
+          },
+          "price": 1299.99,
+          "stock": 10
+        }
+      ],
+      "features": {
+        "display": "6.1-inch Super Retina XDR",
+        "processor": "A16 Bionic chip",
+        "battery": "3200mAh",
+        "camera": "48MP + 12MP + 12MP Triple Camera"
+      }
     },
     {
-      "id": "2",
-      "image": "/public/naturl.jpg",
-      "name": "Iphone 15 Pro",
-      "price": 799
+      "id": 2,
+      "name": "Samsung Galaxy S23 Ultra",
+      "price": 1199.99,
+      "category": "Smartphones",
+      "brand": "Samsung",
+      "variants": [
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Phantom Black",
+            "hex": "#141414"
+          },
+          "price": 1199.99,
+          "stock": 25
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Green",
+            "hex": "#3D5A40"
+          },
+          "price": 1399.99,
+          "stock": 15
+        },
+        {
+          "storage": "1TB",
+          "color": {
+            "name": "Burgundy",
+            "hex": "#800020"
+          },
+          "price": 1599.99,
+          "stock": 5
+        }
+      ],
+      "features": {
+        "display": "6.8-inch Dynamic AMOLED 2X",
+        "processor": "Snapdragon 8 Gen 2",
+        "battery": "5000mAh",
+        "camera": "200MP + 10MP + 12MP + 10MP Quad Camera"
+      }
     },
     {
-      "id": "3",
-      "image": "/public/blue.jpg",
-      "name": "Iphone 15",
-      "price": 699
+      "id": 3,
+      "name": "Google Pixel 7 Pro",
+      "price": 899.99,
+      "category": "Smartphones",
+      "brand": "Google",
+      "variants": [
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Obsidian",
+            "hex": "#1B1B1B"
+          },
+          "price": 899.99,
+          "stock": 40
+        },
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Snow",
+            "hex": "#FFFFFF"
+          },
+          "price": 999.99,
+          "stock": 30
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Hazel",
+            "hex": "#A9A69A"
+          },
+          "price": 1099.99,
+          "stock": 10
+        }
+      ],
+      "features": {
+        "display": "6.7-inch LTPO AMOLED",
+        "processor": "Google Tensor G2",
+        "battery": "5000mAh",
+        "camera": "50MP + 48MP + 12MP Triple Camera"
+      }
     },
     {
-      "id": "4",
-      "image": "/public/white.jpg",
-      "name": "Iphone 15 Pro",
-      "price": 999
+      "id": 4,
+      "name": "OnePlus 11",
+      "price": 699.99,
+      "category": "Smartphones",
+      "brand": "OnePlus",
+      "variants": [
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Titan Black",
+            "hex": "#0B0C10"
+          },
+          "price": 699.99,
+          "stock": 50
+        },
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Eternal Green",
+            "hex": "#004d00"
+          },
+          "price": 799.99,
+          "stock": 35
+        }
+      ],
+      "features": {
+        "display": "6.7-inch Fluid AMOLED",
+        "processor": "Snapdragon 8 Gen 2",
+        "battery": "5000mAh",
+        "camera": "50MP + 48MP + 32MP Triple Camera"
+      }
     },
     {
-      "id": "5",
-      "image": "/public/white.jpg",
-      "name": "Iphone 15 Pro",
-      "price": 999
+      "id": 5,
+      "name": "Samsung Galaxy A54",
+      "price": 449.99,
+      "category": "Smartphones",
+      "brand": "Samsung",
+      "variants": [
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Awesome White",
+            "hex": "#F8F8F8"
+          },
+          "price": 449.99,
+          "stock": 60
+        },
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Awesome Black",
+            "hex": "#333333"
+          },
+          "price": 499.99,
+          "stock": 45
+        }
+      ],
+      "features": {
+        "display": "6.4-inch Super AMOLED",
+        "processor": "Exynos 1380",
+        "battery": "5000mAh",
+        "camera": "50MP + 12MP + 5MP Triple Camera"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Google Pixel 6a",
+      "price": 399.99,
+      "category": "Smartphones",
+      "brand": "Google",
+      "variants": [
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Charcoal",
+            "hex": "#333333"
+          },
+          "price": 399.99,
+          "stock": 70
+        },
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Sage",
+            "hex": "#B4B9B0"
+          },
+          "price": 399.99,
+          "stock": 55
+        }
+      ],
+      "features": {
+        "display": "6.1-inch OLED",
+        "processor": "Google Tensor",
+        "battery": "4410mAh",
+        "camera": "12.2MP + 12MP Dual Camera"
+      }
+    },
+    {
+      "id": 7,
+      "name": "OnePlus Nord N200",
+      "price": 249.99,
+      "category": "Smartphones",
+      "brand": "OnePlus",
+      "variants": [
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Midnight Ice",
+            "hex": "#2C2C2C"
+          },
+          "price": 249.99,
+          "stock": 80
+        },
+        {
+          "storage": "128GB",
+          "color": {
+            "name": "Chrome Silver",
+            "hex": "#D0D0D0"
+          },
+          "price": 249.99,
+          "stock": 65
+        }
+      ],
+      "features": {
+        "display": "6.49-inch LCD",
+        "processor": "Snapdragon 480",
+        "battery": "5000mAh",
+        "camera": "48MP + 2MP + 2MP Triple Camera"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Xiaomi 13 Pro",
+      "price": 1099.99,
+      "category": "Smartphones",
+      "brand": "Xiaomi",
+      "variants": [
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Ceramic Black",
+            "hex": "#2B2B2B"
+          },
+          "price": 1099.99,
+          "stock": 30
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Ceramic White",
+            "hex": "#FFFFFF"
+          },
+          "price": 1199.99,
+          "stock": 15
+        }
+      ],
+      "features": {
+        "display": "6.73-inch LTPO AMOLED",
+        "processor": "Snapdragon 8 Gen 2",
+        "battery": "4820mAh",
+        "camera": "50MP + 50MP + 50MP Triple Camera"
+      },
+      "image": "https://example.com/images/xiaomi-13-pro.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Sony Xperia 1 V",
+      "price": 1299.99,
+      "category": "Smartphones",
+      "brand": "Sony",
+      "variants": [
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Matte Black",
+            "hex": "#000000"
+          },
+          "price": 1299.99,
+          "stock": 20
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Green",
+            "hex": "#556B2F"
+          },
+          "price": 1399.99,
+          "stock": 10
+        }
+      ],
+      "features": {
+        "display": "6.5-inch OLED 4K HDR",
+        "processor": "Snapdragon 8 Gen 2",
+        "battery": "5000mAh",
+        "camera": "48MP + 12MP + 12MP Triple Camera"
+      },
+      "image": "https://example.com/images/sony-xperia-1v.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Huawei P60 Pro",
+      "price": 1199.99,
+      "category": "Smartphones",
+      "brand": "Huawei",
+      "variants": [
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Black",
+            "hex": "#1A1A1A"
+          },
+          "price": 1199.99,
+          "stock": 25
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "White",
+            "hex": "#F5F5F5"
+          },
+          "price": 1299.99,
+          "stock": 10
+        }
+      ],
+      "features": {
+        "display": "6.67-inch OLED",
+        "processor": "Kirin 9000",
+        "battery": "4815mAh",
+        "camera": "50MP + 48MP + 12MP Triple Camera"
+      },
+      "image": "https://example.com/images/huawei-p60-pro.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Oppo Find X6 Pro",
+      "price": 1299.99,
+      "category": "Smartphones",
+      "brand": "Oppo",
+      "variants": [
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Black",
+            "hex": "#0F0F0F"
+          },
+          "price": 1299.99,
+          "stock": 25
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Brown",
+            "hex": "#8B4513"
+          },
+          "price": 1399.99,
+          "stock": 15
+        }
+      ],
+      "features": {
+        "display": "6.82-inch AMOLED",
+        "processor": "Snapdragon 8 Gen 2",
+        "battery": "5000mAh",
+        "camera": "50MP + 50MP + 13MP Triple Camera"
+      },
+      "image": "https://example.com/images/oppo-find-x6-pro.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Asus ROG Phone 7",
+      "price": 1099.99,
+      "category": "Smartphones",
+      "brand": "Asus",
+      "variants": [
+        {
+          "storage": "256GB",
+          "color": {
+            "name": "Phantom Black",
+            "hex": "#1C1C1C"
+          },
+          "price": 1099.99,
+          "stock": 35
+        },
+        {
+          "storage": "512GB",
+          "color": {
+            "name": "Storm White",
+            "hex": "#E5E5E5"
+          },
+          "price": 1199.99,
+          "stock": 20
+        }
+      ],
+      "features": {
+        "display": "6.78-inch AMOLED",
+        "processor": "Snapdragon 8 Gen 2",
+        "battery": "6000mAh",
+        "camera": "50MP + 13MP + 5MP Triple Camera"
+      },
+      "image": "https://example.com/images/asus-rog-phone-7.jpg"
     }
   ]
 }
