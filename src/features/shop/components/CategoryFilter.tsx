@@ -1,24 +1,25 @@
-import { useDispatch, useSelector } from 'react-redux';
 import CheckBox from '../../../components/CheckBox';
 import SidebarWidget from './SidebarWidget';
-import { RootStateType } from '../../../redux/store';
-
-const category = ['Budget', 'Midrange', 'Flagship'];
+import { useQuery } from '@tanstack/react-query';
+import { Categories, getCategories } from '../../../services/api';
 
 function CategoryFilter() {
-  const dispatch = useDispatch();
-  const selectedCategories = useSelector(
-    (state: RootStateType) => state.filter.selectedCategory
-  );
+  const { data: categories } = useQuery<Categories>({
+    queryFn: () => getCategories(),
+    queryKey: ['categories'],
+  });
+
+  // const dispatch = useDispatch();
 
   return (
     <SidebarWidget title='Category'>
       <ul className='flex flex-col gap-1'>
-        {category.map((item) => (
-          <li key={item}>
-            <CheckBox item={item} />
-          </li>
-        ))}
+        {categories &&
+          categories.map((item) => (
+            <li key={item.id}>
+              <CheckBox item={item} />
+            </li>
+          ))}
       </ul>
     </SidebarWidget>
   );

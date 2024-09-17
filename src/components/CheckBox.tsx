@@ -1,14 +1,25 @@
-type CheckboxPropType = {
-  item: string;
+import { useDispatch } from 'react-redux';
+import { Category } from '../services/api';
+import { toggleCategory } from '../redux/filterSlice';
+
+type CheckBoxPropTypes = {
+  item: Category;
 };
 
-function CheckBox({ item }: CheckboxPropType) {
+function CheckBox({ item }: CheckBoxPropTypes) {
+  const dispatch = useDispatch();
+
+  const handleChange = () => {
+    dispatch(toggleCategory(item.id));
+  };
+
   return (
     <div className='checkbox-wrapper relative flex items-center gap-2'>
       <input
         type='checkbox'
-        id='checkbox'
+        id={`checkbox-${item.id}`}
         className='absolute inset-0 accent-slate-700 opacity-0'
+        onChange={handleChange}
       />
       <div className='fake-checkbox grid h-5 w-5 place-items-center rounded-md border-2 border-blue-400 text-white transition'>
         <svg
@@ -32,7 +43,7 @@ function CheckBox({ item }: CheckboxPropType) {
           </g>
         </svg>
       </div>
-      <label htmlFor='checkbox'>{item}</label>
+      <label htmlFor={`checkbox-${item.id}`}>{item.name}</label>
     </div>
   );
 }

@@ -13,6 +13,12 @@ function ShopLayout() {
     (state: RootStateType) => state.filter.priceRange
   );
 
+  // selected categories = [1,3,4,56,64,9]
+
+  const selectedCategories = useSelector(
+    (state: RootStateType) => state.filter.selectedCategory
+  );
+
   const { data: products, isLoading: isProductLoading } = useQuery<
     ProductType[]
   >({
@@ -23,7 +29,12 @@ function ShopLayout() {
   const filterdProducts = products?.filter((product) => {
     if (!priceRange) return true;
 
-    return product.price >= priceRange[0] && product.price <= priceRange[1];
+    const categoryFilter =
+      !selectedCategories.length || selectedCategories.includes(product.id);
+    const priceFilter =
+      product.price >= priceRange[0] && product.price <= priceRange[1];
+
+    return categoryFilter && priceFilter;
   });
 
   return (

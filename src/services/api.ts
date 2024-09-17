@@ -15,7 +15,15 @@ type FeaturedProduct = {
   image: string;
 };
 
+export type Category = {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
+};
+
 type AllProducts = ProductType[];
+export type Categories = Category[];
 
 export type FeaturedProducts = FeaturedProduct[];
 
@@ -38,6 +46,14 @@ export async function getFeatured(): Promise<FeaturedProducts> {
 export async function getAllProducts(): Promise<AllProducts> {
   const res: AxiosResponse<AllProducts> = await axios.get(
     `${BASE_URL}/products`
+  );
+
+  return res.data;
+}
+
+export async function getCategories(): Promise<Categories> {
+  const res: AxiosResponse<Categories> = await axios.get(
+    `${BASE_URL}/categories`
   );
 
   return res.data;

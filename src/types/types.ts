@@ -4,7 +4,7 @@ export type HeadingProps = {
 };
 
 export type ProductType = {
-  id: string;
+  id: number;
   image: string;
   name: string;
   price: number;
