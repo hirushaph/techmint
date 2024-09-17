@@ -74,6 +74,14 @@
       "image": "budget-phones.jpg"
     }
   ],
+
+  "brands": [
+    { "id": 1, "name": "apple" },
+    { "id": 2, "name": "samsung" },
+    { "id": 3, "name": "Pixel" },
+    { "id": 4, "name": "Sony" },
+    { "id": 5, "name": "Xiaomi" }
+  ],
   "products": [
     {
       "id": 1,
