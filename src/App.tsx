@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Shop from './pages/Shop';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import Product from './pages/Product';
 
 const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ function App() {
         <Route element={<AppLayout />}>
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<Shop />} />
+          <Route path='/product/:productId' element={<Product />} />
         </Route>
       </Routes>
     </QueryClientProvider>

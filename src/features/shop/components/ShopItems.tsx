@@ -10,7 +10,15 @@ type ShopItemsProps = {
 function ShopItems({ products, isProductLoading }: ShopItemsProps) {
   return (
     <div>
-      <div className='sort-by'>Sort By</div>
+      <div className='sort-by mb-4 flex w-full justify-between py-2 pr-8'>
+        <p>Home/Shop</p>
+        <select name='sort-filter' className='outline-none' id=''>
+          <option value='Price low to high'>Price low-high</option>
+          <option value='Price high to low'>Price high-low</option>
+          <option value='newest'>Newest</option>
+          <option value='offers'>Offers</option>
+        </select>
+      </div>
 
       {isProductLoading && (
         <div className='notify-area mt-4 flex justify-center'>
