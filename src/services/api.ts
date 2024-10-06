@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { ProductType } from '../types/types';
+import { Product, ProductType } from '../types/types';
 
 const BASE_URL = 'http://localhost:3000';
 
@@ -54,6 +54,14 @@ export async function getAllProducts(): Promise<AllProducts> {
 export async function getCategories(): Promise<Categories> {
   const res: AxiosResponse<Categories> = await axios.get(
     `${BASE_URL}/categories`
+  );
+
+  return res.data;
+}
+
+export async function getSingleProduct(id: string): Promise<Product> {
+  const res: AxiosResponse<Product> = await axios.get(
+    `${BASE_URL}/products/${id}`
   );
 
   return res.data;

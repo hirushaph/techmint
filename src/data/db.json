@@ -89,6 +89,23 @@
       "price": 999.99,
       "category": "Smartphones",
       "brand": "Apple",
+      "images": [
+        {
+          "id": 1,
+          "primary": true,
+          "link": "https://i.ibb.co/xsDHnnJ/Apple-i-Phone-14-Pro-500x500.jpg"
+        },
+        {
+          "id": 2,
+          "primary": true,
+          "link": "https://i.ibb.co/F68kJYP/i-Phone-14-Pro-Gold-PDP-Image-Position-1a-WWEN-baefabef-3836-414d-8670-8f7aed746e3c.jpg"
+        },
+        {
+          "id": 3,
+          "primary": true,
+          "link": "https://i.ibb.co/JsZQm60/iphone-14-pro-deep-purple.jpg"
+        }
+      ],
       "variants": [
         {
           "storage": "128GB",
@@ -511,5 +528,6 @@
       },
       "image": "https://example.com/images/asus-rog-phone-7.jpg"
     }
-  ]
+  ],
+  "singleProduct": [{}]
 }
