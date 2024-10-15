@@ -3,6 +3,10 @@ import { ImageGallery } from '../features/product';
 import { useQuery } from '@tanstack/react-query';
 import { getSingleProduct } from '../services/api';
 import Button from '../components/Button';
+import SelectorSet from '../features/product/components/SelectorSet';
+import { HiMinusSm, HiPlusSm } from 'react-icons/hi';
+import StockSelector from '../features/product/components/StockSelector';
+import ColorSelector from '../features/product/components/ColorSelector';
 
 function Product() {
   const { productId } = useParams();
@@ -37,18 +41,10 @@ function Product() {
             </p>
             <span className='discount-percentage text-blue-600'>40%</span>
           </div>
-          <div className='stock-selecter mb-8 flex'>
-            <button className='border px-2'>-</button>
-            <input
-              type='number'
-              name='stock'
-              className='inline-block h-full w-20 bg-dark-200 text-xl outline-2'
-            />
-            z<button className='border px-2'>+</button>
-            <p className='avalibility ml-4 font-medium text-green-500'>
-              200 in stock
-            </p>
-          </div>
+          <SelectorSet />
+          <ColorSelector />
+          <StockSelector />
+
           {/* TODO Code storage select box and color selectbox */}
           <Button>Add To Cart</Button>
         </div>
