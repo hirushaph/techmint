@@ -32,17 +32,18 @@ function Product() {
             consequatur placeat animi magnam. Hic minima vel repellat nulla, ab
             quasi libero reprehenderit officiis?
           </p>
-          <div className='discount-price mb-5 flex items-center justify-start gap-4'>
-            <p className='discounted-price text-xl font-bold text-blue-500'>
-              {currentProduct?.price} $
-            </p>
-            <p className='retail-price font-s font-semibold text-gray-600 line-through'>
+          <div className='discount-price mb-5'>
+            <p className='retail-price font-s font-semibold text-gray-500 line-through'>
               1000$
             </p>
-            <span className='discount-percentage text-blue-600'>40%</span>
+            <div className='discountedPrice'>
+              <p className='discounted-price text-xl font-bold text-blue-500'>
+                {currentProduct?.price} $
+              </p>
+            </div>
           </div>
           <SelectorSet />
-          <ColorSelector />
+          <ColorSelector className='mt-5' />
           <StockSelector />
 
           {/* TODO Code storage select box and color selectbox */}

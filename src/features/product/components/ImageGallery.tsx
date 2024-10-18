@@ -1,41 +1,52 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/free-mode';
+import 'swiper/css/pagination';
+
+// import required modules
+import { Autoplay, FreeMode, Navigation } from 'swiper/modules';
+
 function ImageGallery() {
   return (
-    <div className=''>
-      <div className='main-banner flex flex-col items-center'>
-        <img
-          src='/pixel9.jpg'
-          className='w-[420px] border border-gray-700'
-          alt=''
-        />
-        <div className='image-casarol mt-3 flex overflow-hidden'>
-          <img
-            src='/pixel9.jpg'
-            className='h-full w-[100px] border border-gray-700'
-            alt=''
-          />
-          <img
-            src='/pixel9.jpg'
-            className='h-full w-[100px] border border-gray-700'
-            alt=''
-          />
-          <img
-            src='/pixel9.jpg'
-            className='h-full w-[100px] border border-gray-700'
-            alt=''
-          />
-          <img
-            src='/pixel9.jpg'
-            className='h-full w-[100px] border border-gray-700'
-            alt=''
-          />
-          <img
-            src='/pixel9.jpg'
-            className='h-full w-[100px] border border-gray-700'
-            alt=''
-          />
-        </div>
-      </div>
-    </div>
+    <>
+      <Swiper
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        slidesPerView={3}
+        spaceBetween={30}
+        freeMode={true}
+        navigation={true}
+        modules={[FreeMode, Autoplay, Navigation]}
+        className='mySwiper'
+      >
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src='/pixel9.jpg' alt='' />
+        </SwiperSlide>
+      </Swiper>
+    </>
   );
 }
 

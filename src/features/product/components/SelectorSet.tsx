@@ -16,6 +16,7 @@ function SelectorSet() {
 
   return (
     <div>
+      <h4 className='mb-2 text-sm uppercase text-dark-400'>Storage</h4>
       {data.map((item) => (
         <span
           className={`mr-2 cursor-pointer rounded-md border px-2 py-1 transition hover:border-dark-700 hover:shadow-md ${selectedItem === item.id ? `border-blue-600` : ''}`}
