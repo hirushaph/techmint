@@ -10,28 +10,10 @@ export type ProductType = {
   price: number;
 };
 
-export type Product = {
-  id: number;
-  name: string;
-  price: number;
-  category: string;
-  brand: string;
-  images: Image[];
-  variants: Variant[];
-  features: Features;
-};
-
 type Image = {
   id: number;
   primary: boolean;
   link: string;
-};
-
-type Variant = {
-  storage: string;
-  color: Color;
-  price: number;
-  stock: number;
 };
 
 type Color = {
@@ -44,4 +26,49 @@ type Features = {
   processor: string;
   battery: string;
   camera: string;
+};
+
+export type AllProducts = Product[];
+export type Product = {
+  id: string;
+  name: string;
+  brand: string;
+  description: string;
+  price: number;
+  discount: number;
+  currency: string;
+  stock: number;
+  image: string;
+  variants: Variant[];
+  features: string[];
+  specifications: Specifications;
+  warranty: string;
+  returnPolicy: string;
+  deliveryOptions: string[];
+};
+
+type Variant = {
+  color: string;
+  hex: string;
+  storage: string;
+  price: number;
+  sku: string;
+  images: string[];
+};
+
+type Specifications = {
+  display: string;
+  resolution: string;
+  processor: string;
+  ram: string;
+  battery: string;
+  camera: Camera;
+  os: string;
+  dimensions: string;
+  weight: string;
+};
+
+type Camera = {
+  rear: string;
+  front: string;
 };

@@ -1,5 +1,7 @@
 import axios, { AxiosResponse } from 'axios';
-import { Product, ProductType } from '../types/types';
+import { AllProducts, Product, ProductType } from '../types/types';
+import { collection, getDocs, query } from 'firebase/firestore';
+import { db } from './firebase';
 
 const BASE_URL = 'http://localhost:3000';
 
@@ -22,7 +24,6 @@ export type Category = {
   image: string;
 };
 
-type AllProducts = ProductType[];
 export type Categories = Category[];
 
 export type FeaturedProducts = FeaturedProduct[];
@@ -44,11 +45,23 @@ export async function getFeatured(): Promise<FeaturedProducts> {
 }
 
 export async function getAllProducts(): Promise<AllProducts> {
-  const res: AxiosResponse<AllProducts> = await axios.get(
-    `${BASE_URL}/products`
-  );
+  try {
+    const querySnapshot = await getDocs(collection(db, 'products'));
 
-  return res.data;
+    if (querySnapshot.empty) {
+      return [];
+    }
+
+    const documents: AllProducts = [];
+
+    querySnapshot.forEach((doc) => {
+      documents.push({ id: doc.id, ...doc.data() } as Product);
+    });
+
+    return documents;
+  } catch (error) {
+    throw error;
+  }
 }
 
 export async function getCategories(): Promise<Categories> {
