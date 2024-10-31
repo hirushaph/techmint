@@ -28,8 +28,8 @@ type Features = {
   camera: string;
 };
 
-export type AllProducts = Product[];
-export type Product = {
+export type AllProducts = SingleProduct[];
+export type SingleProduct = {
   id: string;
   name: string;
   brand: string;

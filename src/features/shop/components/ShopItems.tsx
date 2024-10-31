@@ -1,9 +1,9 @@
 import Product from '../../../components/Product';
 import Spinner from '../../../components/Spinner';
-import { ProductType } from '../../../types/types';
+import { AllProducts, ProductType } from '../../../types/types';
 
 type ShopItemsProps = {
-  products: ProductType[];
+  products: AllProducts;
   isProductLoading: boolean;
 };
 

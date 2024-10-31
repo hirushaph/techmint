@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type FilterType = {
   priceRange: [number, number] | null;
-  selectedCategory: number[];
+  selectedCategory: string[];
 };
 
 const initialState: FilterType = {
@@ -17,7 +17,7 @@ const filterSlice = createSlice({
     setPriceRange: (state, action: PayloadAction<[number, number]>) => {
       state.priceRange = action.payload;
     },
-    toggleCategory: (state, action: PayloadAction<number>) => {
+    toggleCategory: (state, action: PayloadAction<string>) => {
       const category = action.payload;
 
       if (state.selectedCategory.includes(category)) {

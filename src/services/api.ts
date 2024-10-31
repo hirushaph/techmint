@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { AllProducts, Product, ProductType } from '../types/types';
+import { AllProducts, SingleProduct } from '../types/types';
 import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from './firebase';
 
@@ -55,7 +55,7 @@ export async function getAllProducts(): Promise<AllProducts> {
     const documents: AllProducts = [];
 
     querySnapshot.forEach((doc) => {
-      documents.push({ id: doc.id, ...doc.data() } as Product);
+      documents.push({ id: doc.id, ...doc.data() } as SingleProduct);
     });
 
     return documents;
@@ -72,8 +72,8 @@ export async function getCategories(): Promise<Categories> {
   return res.data;
 }
 
-export async function getSingleProduct(id: string): Promise<Product> {
-  const res: AxiosResponse<Product> = await axios.get(
+export async function getSingleProduct(id: string): Promise<SingleProduct> {
+  const res: AxiosResponse<SingleProduct> = await axios.get(
     `${BASE_URL}/products/${id}`
   );
 

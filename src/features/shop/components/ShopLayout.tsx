@@ -2,7 +2,7 @@ import ShopItems from './ShopItems';
 import Sidebar from './Sidebar';
 import { useQuery } from '@tanstack/react-query';
 import { getAllProducts } from '../../../services/api';
-import { ProductType } from '../../../types/types';
+import { AllProducts } from '../../../types/types';
 import { useSelector } from 'react-redux';
 import { RootStateType } from '../../../redux/store';
 
@@ -19,12 +19,12 @@ function ShopLayout() {
     (state: RootStateType) => state.filter.selectedCategory
   );
 
-  const { data: products, isLoading: isProductLoading } = useQuery<
-    ProductType[]
-  >({
-    queryFn: () => getAllProducts(),
-    queryKey: ['products'],
-  });
+  const { data: products, isLoading: isProductLoading } = useQuery<AllProducts>(
+    {
+      queryFn: () => getAllProducts(),
+      queryKey: ['products'],
+    }
+  );
 
   const filterdProducts = products?.filter((product) => {
     if (!priceRange) return true;
