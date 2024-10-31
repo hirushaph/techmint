@@ -9,13 +9,23 @@ import 'swiper/css/pagination';
 import { FreeMode, Navigation } from 'swiper/modules';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useState } from 'react';
+import { SingleProduct } from '../../../types/types';
 
-const images = ['/pixel9.jpg', '/pixel8a.jpg'];
+type ImageGalleryProps = {
+  currentProduct?: SingleProduct;
+  selectedVarient: any;
+};
 
-function ImageGallery() {
+// TODO Fix image gallery
+
+function ImageGallery({ currentProduct, selectedVarient }: ImageGalleryProps) {
   const [currentMainThumb, setCurrentMainThumb] = useState<string | null>(
-    '/pixel9.jpg'
+    currentProduct?.image || ''
   );
+
+  const images = currentProduct?.variants.map((item) => {
+    return item.images[0];
+  });
   return (
     <div>
       <div className='product-thumb flex justify-center'>
@@ -34,7 +44,7 @@ function ImageGallery() {
           className='mySwiper'
           width={400}
         >
-          {images.map((image) => (
+          {images?.map((image) => (
             <SwiperSlide key={image}>
               <img
                 src={image}
