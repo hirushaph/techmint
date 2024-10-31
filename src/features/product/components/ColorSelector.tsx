@@ -13,25 +13,38 @@ const colors = [
   },
 ];
 
-type ColorSelectorProps = {
-  className?: string;
+type Color = {
+  color: string;
+  hex: string;
 };
 
-function ColorSelector({ className = '' }: ColorSelectorProps) {
-  const [selectedColor, setSelectedColor] = useState<number | null>(null);
+type ColorSelectorProps = {
+  className?: string;
+  color: Color[];
+  setSelectedColor: React.Dispatch<React.SetStateAction<string | null>>;
+  selectedColor: string | null;
+};
+
+function ColorSelector({
+  className = '',
+  color,
+  selectedColor,
+  setSelectedColor,
+}: ColorSelectorProps) {
   return (
     <div className={`color-selector ${className}`}>
       <h4 className='text-sm uppercase text-dark-400'>Color</h4>
       <div className='mt-2 flex gap-2'>
-        {colors.map((color) => (
+        {color.map((color) => (
           <span
+            key={color.hex}
             style={{ backgroundColor: color.hex }}
             className={`h-7 w-7 cursor-pointer rounded-full transition hover:ring ${
-              selectedColor === color.code
+              selectedColor === color.hex
                 ? 'ring-2 ring-blue-500 ring-offset-1'
                 : ''
             }`}
-            onClick={() => setSelectedColor(color.code)}
+            onClick={() => setSelectedColor(color.hex)}
           ></span>
         ))}
       </div>

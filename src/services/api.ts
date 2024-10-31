@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { AllProducts, SingleProduct } from '../types/types';
-import { collection, getDocs, query } from 'firebase/firestore';
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from './firebase';
 
 const BASE_URL = 'http://localhost:3000';
@@ -72,10 +72,21 @@ export async function getCategories(): Promise<Categories> {
   return res.data;
 }
 
-export async function getSingleProduct(id: string): Promise<SingleProduct> {
-  const res: AxiosResponse<SingleProduct> = await axios.get(
-    `${BASE_URL}/products/${id}`
-  );
+export async function getSingleProduct(
+  slug: string
+): Promise<SingleProduct | null> {
+  const itemsRef = collection(db, 'products');
 
-  return res.data;
+  const q = query(itemsRef, where('slug', '==', slug));
+
+  const querySnapshot = await getDocs(q);
+
+  if (querySnapshot.empty) {
+    return null;
+  }
+
+  // console.log(querySnapshot.docs[0].data());
+
+  const itemData = querySnapshot.docs[0].data() as SingleProduct;
+  return itemData;
 }

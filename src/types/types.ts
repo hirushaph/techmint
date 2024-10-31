@@ -31,6 +31,8 @@ type Features = {
 export type AllProducts = SingleProduct[];
 export type SingleProduct = {
   id: string;
+  rating: string;
+  slug: string;
   name: string;
   brand: string;
   description: string;

@@ -10,14 +10,7 @@ import { FreeMode, Navigation } from 'swiper/modules';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 import { useState } from 'react';
 
-const images = [
-  '/pixel9.jpg',
-  '/pixel9.jpg',
-  '/pixel8a.jpg',
-  '/pixel9.jpg',
-  '/pixel9.jpg',
-  '/pixel9.jpg',
-];
+const images = ['/pixel9.jpg', '/pixel8a.jpg'];
 
 function ImageGallery() {
   const [currentMainThumb, setCurrentMainThumb] = useState<string | null>(

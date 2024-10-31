@@ -1,28 +1,37 @@
 import { useState } from 'react';
 
-const data = [
-  { id: 1, name: '128GB' },
-  { id: 2, name: '256GB' },
-  { id: 3, name: '512GB' },
-  { id: 4, name: '1TB' },
-];
+// const data = [
+//   { id: 1, name: '128GB' },
+//   { id: 2, name: '256GB' },
+//   { id: 3, name: '512GB' },
+//   { id: 4, name: '1TB' },
+// ];
 
-function SelectorSet() {
-  const [selectedItem, setSelectedItem] = useState<number | null>(null);
+type SelectorSetProps = {
+  storage: string[];
+  setSelectedItem: React.Dispatch<React.SetStateAction<string | null>>;
+  selectedItem: string | null;
+};
 
-  function handleSelctedItem(id: number) {
+function SelectorSet({
+  storage,
+  setSelectedItem,
+  selectedItem,
+}: SelectorSetProps) {
+  function handleSelctedItem(id: string) {
     setSelectedItem(id);
   }
 
   return (
     <div>
       <h4 className='mb-2 text-sm uppercase text-dark-400'>Storage</h4>
-      {data.map((item) => (
+      {storage.map((item) => (
         <span
-          className={`mr-2 cursor-pointer rounded-md border px-2 py-1 transition hover:border-dark-700 hover:shadow-md ${selectedItem === item.id ? `border-blue-600` : ''}`}
-          onClick={() => handleSelctedItem(item.id)}
+          key={item}
+          className={`mr-2 cursor-pointer rounded-md border px-2 py-1 transition hover:border-dark-700 hover:shadow-md ${selectedItem === item ? `border-blue-600` : ''}`}
+          onClick={() => handleSelctedItem(item)}
         >
-          {item.name}
+          {item}
         </span>
       ))}
     </div>
