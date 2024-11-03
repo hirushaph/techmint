@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 // import required modules
 import { FreeMode, Navigation } from 'swiper/modules';
 import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SingleProduct } from '../../../types/types';
 
 type ImageGalleryProps = {
@@ -26,6 +26,14 @@ function ImageGallery({ currentProduct, selectedVarient }: ImageGalleryProps) {
   const images = currentProduct?.variants.map((item) => {
     return item.images[0];
   });
+
+  useEffect(
+    function () {
+      if (selectedVarient === null) return;
+      setCurrentMainThumb(selectedVarient?.images[0] || currentProduct?.image);
+    },
+    [selectedVarient]
+  );
   return (
     <div>
       <div className='product-thumb flex justify-center'>
