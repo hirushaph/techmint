@@ -37,6 +37,7 @@
 body {
   color: var(--dark-900);
   background-color: var(--dark-50);
+  font-family: 'Inter', sans-serif;
 }
 
 ::placeholder {
