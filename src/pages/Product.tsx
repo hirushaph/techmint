@@ -50,7 +50,7 @@ function Product() {
   }, [selectedColor, selectedItem, currentProduct]);
 
   return (
-    <div className='container mx-auto px-4'>
+    <div className='container mx-auto mt-4 px-4'>
       <div className='grid grid-cols-2'>
         <div className='left'>
           {currentProduct && (

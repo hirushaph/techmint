@@ -18,9 +18,9 @@ function IconMenu({ setShowMobileMenu, showMobileMenu }: IconMenuProps) {
           <VscAccount className='header-icon text-2xl' />
         </span>
       </Link>
-      <div className='flex items-center gap-3 rounded-3xl bg-blue-100 px-4 py-2 text-blue-700 shadow-sm shadow-blue-100 '>
-        <RiShoppingCart2Line className='' />
-        <span className='font-bold'>180$</span>
+      <div className='flex cursor-pointer items-center gap-3 rounded-3xl border-2 px-3 py-[6px] transition hover:shadow-md'>
+        <RiShoppingCart2Line className='' color='#6b7280 ' />
+        <span className='text-sm font-semibold text-gray-500'>180$</span>
       </div>
       <MobileHamburger
         setShowMobileMenu={setShowMobileMenu}

@@ -45,23 +45,19 @@ export async function getFeatured(): Promise<FeaturedProducts> {
 }
 
 export async function getAllProducts(): Promise<AllProducts> {
-  try {
-    const querySnapshot = await getDocs(collection(db, 'products'));
+  const querySnapshot = await getDocs(collection(db, 'products'));
 
-    if (querySnapshot.empty) {
-      return [];
-    }
-
-    const documents: AllProducts = [];
-
-    querySnapshot.forEach((doc) => {
-      documents.push({ id: doc.id, ...doc.data() } as SingleProduct);
-    });
-
-    return documents;
-  } catch (error) {
-    throw error;
+  if (querySnapshot.empty) {
+    return [];
   }
+
+  const documents: AllProducts = [];
+
+  querySnapshot.forEach((doc) => {
+    documents.push({ id: doc.id, ...doc.data() } as SingleProduct);
+  });
+
+  return documents;
 }
 
 export async function getCategories(): Promise<Categories> {

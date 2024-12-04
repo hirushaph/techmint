@@ -1,6 +1,6 @@
 import Product from '../../../components/Product';
 import Spinner from '../../../components/Spinner';
-import { AllProducts, ProductType } from '../../../types/types';
+import { AllProducts } from '../../../types/types';
 
 type ShopItemsProps = {
   products: AllProducts;
@@ -11,8 +11,12 @@ function ShopItems({ products, isProductLoading }: ShopItemsProps) {
   return (
     <div>
       <div className='sort-by mb-4 flex w-full justify-between py-2 pr-8'>
-        <p>Home/Shop</p>
-        <select name='sort-filter' className='outline-none' id=''>
+        <p>Home / Shop</p>
+        <select
+          name='sort-filter'
+          className='border-1 border-dark-200 px-2 py-1 shadow-sm outline-none'
+          id=''
+        >
           <option value='Price low to high'>Price low-high</option>
           <option value='Price high to low'>Price high-low</option>
           <option value='newest'>Newest</option>
