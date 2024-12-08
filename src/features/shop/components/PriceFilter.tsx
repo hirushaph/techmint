@@ -12,10 +12,10 @@ function PriceFilter() {
   return (
     <SidebarWidget title='Price'>
       <div className='mb-2 flex justify-between'>
-        <p className='rounded-xl bg-blue-100 px-4 py-1'>
+        <p className='rounded-md bg-dark-100 px-4 py-1 text-blue-500'>
           <span className='text-sm' id='start-price'></span>
         </p>
-        <p className='rounded-xl bg-blue-100 px-4 py-1'>
+        <p className='rounded-md bg-dark-100 px-4 py-1 text-blue-500'>
           <span className='text-sm' id='end-price'></span>
         </p>
       </div>

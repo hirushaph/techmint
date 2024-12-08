@@ -1,6 +1,5 @@
 import BrandsFilter from './BrandsFilter';
 import CategoryFilter from './CategoryFilter';
-import ColorFilter from './ColorFilter';
 import PriceFilter from './PriceFilter';
 
 function Sidebar() {
@@ -9,7 +8,6 @@ function Sidebar() {
       <PriceFilter />
       <CategoryFilter />
       <BrandsFilter />
-      <ColorFilter />
     </aside>
   );
 }

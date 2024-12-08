@@ -19,6 +19,10 @@ function ShopLayout() {
     (state: RootStateType) => state.filter.selectedCategory
   );
 
+  const selectedBrand = useSelector(
+    (state: RootStateType) => state.filter.selectedBrand
+  );
+
   const { data: products, isLoading: isProductLoading } = useQuery<AllProducts>(
     {
       queryFn: () => getAllProducts(),
@@ -33,8 +37,9 @@ function ShopLayout() {
       !selectedCategories.length || selectedCategories.includes(product.id);
     const priceFilter =
       product.price >= priceRange[0] && product.price <= priceRange[1];
+    const brandFilter = !selectedBrand || product.brand === selectedBrand;
 
-    return categoryFilter && priceFilter;
+    return categoryFilter && priceFilter && brandFilter;
   });
 
   return (
