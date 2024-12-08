@@ -21,9 +21,9 @@ function CheckBox({ item }: CheckBoxPropTypes) {
         className='absolute inset-0 accent-slate-700 opacity-0'
         onChange={handleChange}
       />
-      <div className='fake-checkbox grid h-5 w-5 place-items-center rounded-md border-2 border-blue-400 text-white transition'>
+      <div className='fake-checkbox grid h-[18px] w-[18px] place-items-center rounded-sm border-2 border-dark-500 text-white transition'>
         <svg
-          fill='#000000'
+          fill='#6b7280'
           version='1.1'
           id='Capa_1'
           xmlns='http://www.w3.org/2000/svg'

@@ -1,4 +1,3 @@
-import React from 'react';
 import BrandsFilter from './BrandsFilter';
 import CategoryFilter from './CategoryFilter';
 import ColorFilter from './ColorFilter';

@@ -76,11 +76,21 @@
   ],
 
   "brands": [
-    { "id": 1, "name": "apple" },
-    { "id": 2, "name": "samsung" },
-    { "id": 3, "name": "Pixel" },
-    { "id": 4, "name": "Sony" },
-    { "id": 5, "name": "Xiaomi" }
+    {
+      "id": 1,
+      "name": "Google",
+      "image": "https://firebasestorage.googleapis.com/v0/b/techmint-be0df.appspot.com/o/logo%2Fgoogle.png?alt=media&token=ca7425ad-5a5f-4cee-bc97-f9849f53cc53"
+    },
+    {
+      "id": 2,
+      "name": "samsung",
+      "image": "https://firebasestorage.googleapis.com/v0/b/techmint-be0df.appspot.com/o/logo%2Fsamsung.png?alt=media&token=33036d35-1377-441b-8297-555999aede5d"
+    },
+    {
+      "id": 5,
+      "name": "Xiaomi",
+      "image": "https://firebasestorage.googleapis.com/v0/b/techmint-be0df.appspot.com/o/logo%2Fxiaomi.png?alt=media&token=ee7f09b3-54f2-494d-8cbb-bd77b868c1f2"
+    }
   ],
   "products": [
     {
