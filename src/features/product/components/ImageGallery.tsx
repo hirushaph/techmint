@@ -32,7 +32,7 @@ function ImageGallery({ currentProduct, selectedVarient }: ImageGalleryProps) {
       if (selectedVarient === null) return;
       setCurrentMainThumb(selectedVarient?.images[0] || currentProduct?.image);
     },
-    [selectedVarient]
+    [selectedVarient, currentProduct]
   );
   return (
     <div>

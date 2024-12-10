@@ -78,11 +78,8 @@ function Product() {
 
           <p className='mb-2'>{currentProduct?.description}</p>
           <div className='rating mb-2 flex items-center justify-start gap-4'>
-            <Rate
-              count={5}
-              // value={Number(currentProduct?.rating)}
-              direction='ltr'
-            />
+            <Rate count={5} direction='ltr' />
+
             <span className='text-sm text-dark-500'>
               {Number(currentProduct?.rating)}/5
             </span>

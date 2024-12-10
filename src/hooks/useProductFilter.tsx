@@ -12,19 +12,21 @@ function useProductFilter() {
   const color = searchParams.get('color');
   const storage = searchParams.get('storage');
 
-  const setProductFilters = useCallback((filters: ProductFilters) => {
-    setSearchParams((params) => {
-      console.log(params);
-      if (filters.color) {
-        params.set('color', filters.color);
-      }
+  const setProductFilters = useCallback(
+    (filters: ProductFilters) => {
+      setSearchParams((params) => {
+        if (filters.color) {
+          params.set('color', filters.color);
+        }
 
-      if (filters.storage) {
-        params.set('storage', filters.storage);
-      }
-      return params;
-    });
-  }, []);
+        if (filters.storage) {
+          params.set('storage', filters.storage);
+        }
+        return params;
+      });
+    },
+    [setSearchParams]
+  );
 
   return { color, storage, setProductFilters };
 }
