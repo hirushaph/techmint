@@ -36,8 +36,14 @@ function ImageGallery({ currentProduct, selectedVarient }: ImageGalleryProps) {
   );
   return (
     <div>
-      <div className='product-thumb flex justify-center'>
-        <img src={currentMainThumb || ''} alt='' width='400px' className='' />
+      <div className='product-thumb flex h-[400px] justify-center'>
+        <img
+          src={currentMainThumb || ''}
+          alt=''
+          width='400px'
+          height={100}
+          className='object-cover'
+        />
       </div>
       <div className='relative mx-8 px-10'>
         <Swiper

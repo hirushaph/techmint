@@ -1,6 +1,8 @@
 function Spinner() {
   return (
-    <div className='box-border inline-block h-8 w-8 animate-spin rounded-full border-4 border-dark-900 border-b-transparent'></div>
+    <div className='flex h-[97vh] w-full items-center justify-center'>
+      <div className='box-border inline-block h-8 w-8 animate-spin rounded-full border-4 border-dark-900 border-b-transparent'></div>
+    </div>
   );
 }
 

@@ -12,6 +12,7 @@ import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
 import { useEffect, useState } from 'react';
 import useProductFilter from '../hooks/useProductFilter';
+import Spinner from '../components/Spinner';
 
 function Product() {
   const { color: selectedColor, storage: selectedStorage } = useProductFilter();
@@ -20,7 +21,7 @@ function Product() {
 
   const navigate = useNavigate();
 
-  const { data: currentProduct } = useQuery({
+  const { data: currentProduct, isLoading } = useQuery({
     queryFn: () => getSingleProduct(productId || ''),
     queryKey: ['product', productId],
     enabled: !!productId,
@@ -38,10 +39,10 @@ function Product() {
     ),
   ];
   useEffect(() => {
-    if (!currentProduct) {
+    if (!isLoading && !currentProduct) {
       navigate('/404'); // Redirect to 404 page if product is not found
     }
-  }, [currentProduct, navigate]);
+  }, [currentProduct, isLoading, navigate]);
 
   useEffect(() => {
     function isStockAvailable() {
@@ -57,6 +58,8 @@ function Product() {
     }
     isStockAvailable();
   }, [selectedColor, selectedStorage, currentProduct]);
+
+  if (isLoading) return <Spinner />;
 
   return (
     <div className='container mx-auto mt-4 px-4'>
