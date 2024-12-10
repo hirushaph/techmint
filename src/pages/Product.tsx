@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { ImageGallery } from '../features/product';
 import { useQuery } from '@tanstack/react-query';
 import { getSingleProduct } from '../services/api';
@@ -11,16 +11,18 @@ import DetailsTabs from '../features/product/components/DetailsTabs';
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
 import { useEffect, useState } from 'react';
+import useProductFilter from '../hooks/useProductFilter';
 
 function Product() {
-  const [selectedColor, setSelectedColor] = useState<string | null>(null);
-  const [selectedItem, setSelectedItem] = useState<string | null>(null);
+  const { color: selectedColor, storage: selectedStorage } = useProductFilter();
   const [selectedVarient, setSelectedVarient] = useState<any | null>(null);
   const { productId } = useParams();
 
-  const { data: currentProduct, isLoading: productLoading } = useQuery({
+  const navigate = useNavigate();
+
+  const { data: currentProduct } = useQuery({
     queryFn: () => getSingleProduct(productId || ''),
-    queryKey: ['product'],
+    queryKey: ['product', productId],
     enabled: !!productId,
   });
 
@@ -36,10 +38,17 @@ function Product() {
     ),
   ];
   useEffect(() => {
+    if (!currentProduct) {
+      navigate('/404'); // Redirect to 404 page if product is not found
+    }
+  }, [currentProduct, navigate]);
+
+  useEffect(() => {
     function isStockAvailable() {
-      if (selectedColor && selectedItem) {
+      if (selectedColor && selectedStorage) {
         const variant = currentProduct?.variants.find(
-          (item) => item.hex === selectedColor && item.storage === selectedItem
+          (item) =>
+            item.hex === selectedColor && item.storage === selectedStorage
         );
         setSelectedVarient(variant || null);
       } else {
@@ -47,7 +56,7 @@ function Product() {
       }
     }
     isStockAvailable();
-  }, [selectedColor, selectedItem, currentProduct]);
+  }, [selectedColor, selectedStorage, currentProduct]);
 
   return (
     <div className='container mx-auto mt-4 px-4'>
@@ -86,17 +95,8 @@ function Product() {
               </p>
             </div>
           </div>
-          <SelectorSet
-            storage={storage}
-            setSelectedItem={setSelectedItem}
-            selectedItem={selectedItem}
-          />
-          <ColorSelector
-            className='mt-5'
-            color={colors}
-            selectedColor={selectedColor}
-            setSelectedColor={setSelectedColor}
-          />
+          <SelectorSet storage={storage} />
+          <ColorSelector className='mt-5' color={colors} />
           <StockSelector selectedVarient={selectedVarient} />
           {/* TODO Code storage select box and color selectbox */}
           <Button disabled={selectedVarient ? false : true}>Add To Cart</Button>

@@ -2,10 +2,10 @@ export default function Button({ children, disabled = false }) {
   return (
     <button
       disabled={disabled}
-      className={`rounded px-4 py-2 font-bold text-white ${
+      className={`px-4 py-2 text-sm font-normal uppercase text-white transition ${
         disabled
           ? 'cursor-not-allowed bg-gray-400'
-          : 'bg-blue-500 hover:bg-blue-700'
+          : 'bg-blue-500 hover:bg-blue-700 hover:shadow-sm'
       }`}
     >
       {children}

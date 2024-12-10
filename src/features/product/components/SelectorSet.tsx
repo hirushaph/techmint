@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useProductFilter from '../../../hooks/useProductFilter';
 
 // const data = [
 //   { id: 1, name: '128GB' },
@@ -9,17 +9,12 @@ import { useState } from 'react';
 
 type SelectorSetProps = {
   storage: string[];
-  setSelectedItem: React.Dispatch<React.SetStateAction<string | null>>;
-  selectedItem: string | null;
 };
 
-function SelectorSet({
-  storage,
-  setSelectedItem,
-  selectedItem,
-}: SelectorSetProps) {
+function SelectorSet({ storage }: SelectorSetProps) {
+  const { storage: selectedStorage, setProductFilters } = useProductFilter();
   function handleSelctedItem(id: string) {
-    setSelectedItem(id);
+    setProductFilters({ storage: id });
   }
 
   return (
@@ -28,7 +23,7 @@ function SelectorSet({
       {storage.map((item) => (
         <span
           key={item}
-          className={`mr-2 cursor-pointer rounded-md border px-2 py-1 transition hover:border-dark-700 hover:shadow-md ${selectedItem === item ? `border-blue-600` : ''}`}
+          className={`mr-2 cursor-pointer rounded-md border px-2 py-1 transition hover:border-dark-700 hover:shadow-md ${selectedStorage === item ? `border-blue-600` : ''}`}
           onClick={() => handleSelctedItem(item)}
         >
           {item}

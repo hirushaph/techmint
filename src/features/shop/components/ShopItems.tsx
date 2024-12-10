@@ -14,13 +14,13 @@ function ShopItems({ products, isProductLoading }: ShopItemsProps) {
         <p>Home / Shop</p>
         <select
           name='sort-filter'
-          className='border-1 border-dark-200 px-2 py-1 shadow-sm outline-none'
+          className='border-1 border-dark-200 px-2 py-1 text-sm shadow-sm outline-none'
           id=''
         >
-          <option value='Price low to high'>Price low-high</option>
-          <option value='Price high to low'>Price high-low</option>
-          <option value='newest'>Newest</option>
-          <option value='offers'>Offers</option>
+          <option value='offers'>Sort by latest</option>
+          <option value='newest'>Sort by popular</option>
+          <option value='Price low to high'>Sort by Price: low-high</option>
+          <option value='Price high to low'>Sort by Pirce: high-low</option>
         </select>
       </div>
 

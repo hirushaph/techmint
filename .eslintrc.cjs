@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['react', 'react-refresh', 'react-hooks', '@typescript-eslint'],
   rules: {
+    'react/prop-types': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },

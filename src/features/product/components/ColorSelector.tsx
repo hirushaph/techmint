@@ -1,17 +1,4 @@
-import { useState } from 'react';
-
-const colors = [
-  {
-    hex: '#111',
-    name: 'Black',
-    code: 1,
-  },
-  {
-    hex: '#cc3e1f',
-    name: 'Red',
-    code: 2,
-  },
-];
+import useProductFilter from '../../../hooks/useProductFilter';
 
 type Color = {
   color: string;
@@ -21,16 +8,10 @@ type Color = {
 type ColorSelectorProps = {
   className?: string;
   color: Color[];
-  setSelectedColor: React.Dispatch<React.SetStateAction<string | null>>;
-  selectedColor: string | null;
 };
 
-function ColorSelector({
-  className = '',
-  color,
-  selectedColor,
-  setSelectedColor,
-}: ColorSelectorProps) {
+function ColorSelector({ className = '', color }: ColorSelectorProps) {
+  const { color: selectedColor, setProductFilters } = useProductFilter();
   return (
     <div className={`color-selector ${className}`}>
       <h4 className='text-sm uppercase text-dark-400'>Color</h4>
@@ -44,7 +25,7 @@ function ColorSelector({
                 ? 'ring-2 ring-blue-500 ring-offset-1'
                 : ''
             }`}
-            onClick={() => setSelectedColor(color.hex)}
+            onClick={() => setProductFilters({ color: color.hex })}
           ></span>
         ))}
       </div>
