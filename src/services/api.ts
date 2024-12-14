@@ -116,3 +116,28 @@ export async function getPopularProducts(): Promise<AllProducts> {
   );
   return products;
 }
+
+export async function getFilterdProducts(category: string) {
+  const productsRef = collection(db, 'products');
+
+  let q;
+
+  if (category === 'all') {
+    q = query(productsRef);
+  } else {
+    q = query(productsRef, where('categories', 'array-contains', category));
+  }
+
+  const querySnapshot = await getDocs(q);
+  const fetchedProducts = querySnapshot.docs.map(
+    (doc) =>
+      ({
+        id: doc.id,
+        ...doc.data(),
+      }) as SingleProduct
+  );
+
+  console.log(fetchedProducts);
+
+  return fetchedProducts;
+}
