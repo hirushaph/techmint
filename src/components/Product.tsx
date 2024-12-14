@@ -15,7 +15,7 @@ type ProductProps = {
 function Product({ product }: ProductProps) {
   const [showQuickMenu, setShowQuickMenu] = useState(false);
   return (
-    <Link to={`/product/${product.slug}`}>
+    <Link to={`/products/${product.slug}`}>
       <div className='group relative overflow-hidden rounded-3xl border border-dark-200 px-2 pb-4 pt-2 transition duration-300 hover:bg-blue-100'>
         <div className='image-contaier aspect-square overflow-hidden rounded-2xl'>
           <img

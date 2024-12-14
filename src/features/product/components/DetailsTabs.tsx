@@ -15,7 +15,7 @@ function DetailsTabs() {
           className={`font-semibold transition hover:cursor-pointer hover:text-blue-400 ${currentTab === 'des' ? '' : 'text-blue-500'}`}
           onClick={() => setCurrentTab('specs')}
         >
-          Specification
+          Reviews
         </div>
       </div>
       {currentTab === 'des' ? (
@@ -26,7 +26,7 @@ function DetailsTabs() {
           modi!
         </div>
       ) : (
-        <div>Sepecifactions</div>
+        <div>Reviews</div>
       )}
     </>
   );

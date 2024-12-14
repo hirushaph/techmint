@@ -15,8 +15,8 @@ function App() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route path='/' element={<Home />} />
-          <Route path='/shop' element={<Shop />} />
-          <Route path='/product/:productId' element={<Product />} />
+          <Route path='/products' element={<Shop />} />
+          <Route path='/products/:productId' element={<Product />} />
         </Route>
       </Routes>
     </QueryClientProvider>

@@ -10,9 +10,11 @@ import ColorSelector from '../features/product/components/ColorSelector';
 import DetailsTabs from '../features/product/components/DetailsTabs';
 import Rate from 'rc-rate';
 import 'rc-rate/assets/index.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import useProductFilter from '../hooks/useProductFilter';
 import Spinner from '../components/Spinner';
+import Breadcrumbs from '../components/Breadcrumbs';
+import { calculateDisountPrice, isArrayUndefined } from '../utils/helpers';
 
 function Product() {
   const { color: selectedColor, storage: selectedStorage } = useProductFilter();
@@ -27,9 +29,12 @@ function Product() {
     enabled: !!productId,
   });
 
-  const storage = [
-    ...new Set(currentProduct?.variants.map((item) => item.storage)),
-  ];
+  console.log(selectedVarient);
+
+  const storage = useMemo(() => {
+    return [...new Set(currentProduct?.variants.map((item) => item.storage))];
+  }, [currentProduct?.variants]);
+  console.log(storage.length);
 
   const colors = [
     ...new Set(
@@ -38,6 +43,7 @@ function Product() {
       })
     ),
   ];
+
   useEffect(() => {
     if (!isLoading && !currentProduct) {
       navigate('/404'); // Redirect to 404 page if product is not found
@@ -52,12 +58,18 @@ function Product() {
             item.hex === selectedColor && item.storage === selectedStorage
         );
         setSelectedVarient(variant || null);
+      } else if (isArrayUndefined(storage)) {
+        console.log('hello');
+        const variant = currentProduct?.variants.find(
+          (item) => item.hex === selectedColor
+        );
+        setSelectedVarient(variant || null);
       } else {
         setSelectedVarient(null);
       }
     }
     isStockAvailable();
-  }, [selectedColor, selectedStorage, currentProduct]);
+  }, [selectedColor, selectedStorage, currentProduct, storage]);
 
   if (isLoading) return <Spinner />;
 
@@ -73,6 +85,9 @@ function Product() {
           )}
         </div>
         <div className='right'>
+          <div className='mb-2 py-1'>
+            <Breadcrumbs />
+          </div>
           <p className='brand'>{currentProduct?.brand}</p>
           <h3 className='mb-4 text-3xl font-bold'>{currentProduct?.name}</h3>
 
@@ -87,15 +102,20 @@ function Product() {
 
           <div className='discount-price mb-5'>
             <p className='retail-price font-s font-semibold text-gray-500 line-through'>
-              {currentProduct?.price}
+              {selectedVarient?.price || currentProduct?.price}
             </p>
             <div className='discountedPrice'>
               <p className='discounted-price text-xl font-bold text-blue-500'>
-                {currentProduct?.discount} $
+                {calculateDisountPrice(
+                  selectedVarient?.price || currentProduct?.price,
+                  currentProduct?.discount
+                )}{' '}
+                $
               </p>
             </div>
           </div>
-          <SelectorSet storage={storage} />
+          {!isArrayUndefined(storage) && <SelectorSet storage={storage} />}
+
           <ColorSelector className='mt-5' color={colors} />
           <StockSelector selectedVarient={selectedVarient} />
           {/* TODO Code storage select box and color selectbox */}
