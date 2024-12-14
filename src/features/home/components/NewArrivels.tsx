@@ -19,7 +19,7 @@ function NewArrivels() {
     <section className='my-12'>
       <div className='header-bar flex items-center justify-between border-b-2 py-4'>
         <h2
-          className='text-md mr-12 uppercase lg:text-xl'
+          className='text-md mr-12 cursor-pointer uppercase hover:text-blue-400 lg:text-xl'
           onClick={() => handleCategoryChange('all')}
         >
           New Arrivels
@@ -55,7 +55,7 @@ function NewArrivels() {
       </div>
 
       {/* Products Grid */}
-      <div className='h-[300px]'>
+      <div className='h-[310px]'>
         {isLoading && <Spinner className='h-[100%]' />}
         {filterdProducts && (
           <div className='mt-12 grid grid-cols-2 gap-8 lg:grid-cols-5'>
