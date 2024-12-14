@@ -26,49 +26,49 @@
 
   "categories": [
     {
-      "id": 1,
+      "id": "001",
       "name": "Smartphones",
       "description": "Latest high-end smartphones from top brands.",
       "image": "smartphones.jpg"
     },
     {
-      "id": 2,
+      "id": "002",
       "name": "Feature Phones",
       "description": "Simple phones with basic features for calling and texting.",
       "image": "feature-phones.jpg"
     },
     {
-      "id": 3,
+      "id": "003",
       "name": "Tablets",
       "description": "Wide range of tablets for both work and entertainment.",
       "image": "tablets.jpg"
     },
     {
-      "id": 4,
+      "id": "004",
       "name": "Accessories",
       "description": "Phone cases, chargers, headphones, and other accessories.",
       "image": "accessories.jpg"
     },
     {
-      "id": 5,
+      "id": "006",
       "name": "Smartwatches",
       "description": "Advanced smartwatches with health tracking and notification features.",
       "image": "smartwatches.jpg"
     },
     {
-      "id": 6,
+      "id": "005",
       "name": "Flagship Phones",
       "description": "Top-tier smartphones offering cutting-edge technology and premium features.",
       "image": "flagship-phones.jpg"
     },
     {
-      "id": 7,
+      "id": "007",
       "name": "Midrange Phones",
       "description": "Well-rounded phones that offer good performance at a reasonable price.",
       "image": "midrange-phones.jpg"
     },
     {
-      "id": 8,
+      "id": "008",
       "name": "Budget Phones",
       "description": "Affordable smartphones with essential features for everyday use.",
       "image": "budget-phones.jpg"

@@ -34,7 +34,10 @@ function ShopLayout() {
     if (!priceRange) return true;
 
     const categoryFilter =
-      !selectedCategories.length || selectedCategories.includes(product.id);
+      !selectedCategories.length ||
+      product.categories?.some((category) =>
+        selectedCategories.includes(category.categoryId)
+      );
     const priceFilter =
       product.price >= priceRange[0] && product.price <= priceRange[1];
     const brandFilter = !selectedBrand || product.brand === selectedBrand;
