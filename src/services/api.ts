@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
 import { AllProducts, SingleProduct } from '../types/types';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, limit, query, where } from 'firebase/firestore';
 import { db } from './firebase';
 
 const BASE_URL = 'http://localhost:3000';
@@ -97,4 +97,22 @@ export async function getSingleProduct(
 
   const itemData = querySnapshot.docs[0].data() as SingleProduct;
   return itemData;
+}
+
+export async function getPopularProducts(): Promise<AllProducts> {
+  const productsRef = collection(db, 'products');
+
+  // Create a query to fetch only 4 documents
+  const limitedQuery = query(productsRef, limit(4));
+  const querySnapshot = await getDocs(limitedQuery);
+
+  // Process and return the documents
+  const products = querySnapshot.docs.map(
+    (doc) =>
+      ({
+        id: doc.id,
+        ...doc.data(),
+      }) as SingleProduct
+  );
+  return products;
 }

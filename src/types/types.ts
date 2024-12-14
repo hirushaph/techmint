@@ -41,7 +41,7 @@ export type SingleProduct = {
   currency: string;
   stock: number;
   image: string;
-  variants: Variant[];
+  variants: Variants[];
   features: string[];
   specifications: Specifications;
   warranty: string;
@@ -55,7 +55,7 @@ type Category = {
   categoryName: string;
 };
 
-type Variant = {
+type Variants = {
   color: string;
   hex: string;
   storage: string;

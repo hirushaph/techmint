@@ -83,13 +83,18 @@
     },
     {
       "id": 2,
-      "name": "samsung",
+      "name": "Samsung",
       "image": "https://firebasestorage.googleapis.com/v0/b/techmint-be0df.appspot.com/o/logo%2Fsamsung.png?alt=media&token=33036d35-1377-441b-8297-555999aede5d"
     },
     {
       "id": 5,
       "name": "Xiaomi",
       "image": "https://firebasestorage.googleapis.com/v0/b/techmint-be0df.appspot.com/o/logo%2Fxiaomi.png?alt=media&token=ee7f09b3-54f2-494d-8cbb-bd77b868c1f2"
+    },
+    {
+      "id": 6,
+      "name": "Apple",
+      "image": "https://firebasestorage.googleapis.com/v0/b/techmint-be0df.appspot.com/o/logo%2FArtboard%201.png?alt=media&token=a3925682-92fb-44aa-9566-de9f679c9699"
     }
   ],
   "products": [

@@ -8,12 +8,9 @@ import { useState } from 'react';
 import QuickView from './QuickView';
 import { Link } from 'react-router-dom';
 
-type ProductProps = {
-  product: SingleProduct;
-};
-
-function Product({ product }: ProductProps) {
+function Product({ product }: { product: SingleProduct }) {
   const [showQuickMenu, setShowQuickMenu] = useState(false);
+  console.log(product);
   return (
     <Link to={`/products/${product.slug}`}>
       <div className='group relative overflow-hidden rounded-3xl border border-dark-200 px-2 pb-4 pt-2 transition duration-300 hover:bg-blue-100'>
