@@ -47,7 +47,7 @@ export type SingleProduct = {
   warranty: string;
   returnPolicy: string;
   deliveryOptions: string[];
-  categories: Category[];
+  categories: string[];
 };
 
 type Category = {

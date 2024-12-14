@@ -36,7 +36,7 @@ function ShopLayout() {
     const categoryFilter =
       !selectedCategories.length ||
       product.categories?.some((category) =>
-        selectedCategories.includes(category.categoryId)
+        selectedCategories.includes(category)
       );
     const priceFilter =
       product.price >= priceRange[0] && product.price <= priceRange[1];
