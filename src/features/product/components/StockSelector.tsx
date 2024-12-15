@@ -3,10 +3,15 @@ import { HiMinusSm, HiPlusSm } from 'react-icons/hi';
 
 type StockSelecterProps = {
   selectedVarient: any;
+  itemCount: number;
+  setItemCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
-function StockSelector({ selectedVarient }: StockSelecterProps) {
-  const [itemCount, setItemCount] = useState<number>(1);
+function StockSelector({
+  selectedVarient,
+  itemCount,
+  setItemCount,
+}: StockSelecterProps) {
   const maxStock = selectedVarient?.stock;
 
   function increseItems() {

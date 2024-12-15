@@ -18,7 +18,7 @@ function Categories() {
 
         <div className='relative border'>
           <img
-            src='/public/apple watch.jpg'
+            src='/apple watch.jpg'
             alt=''
             className='h-full w-full object-cover'
           />
@@ -29,29 +29,29 @@ function Categories() {
         </div>
         <div className='relative border'>
           <img
-            src='/public/apple watch.jpg'
+            src='/nothing.jpg'
             alt=''
             className='h-full w-full object-cover'
           />
           <div className='absolute bottom-0 p-5'>
-            <p className='mb-4 text-2xl font-semibold uppercase'>Watch</p>
+            <p className='mb-4 text-2xl font-semibold uppercase'>Earbuds</p>
             <button className='bg-white px-4 py-2 uppercase'>Explore</button>
           </div>
         </div>
         <div className='relative border'>
           <img
-            src='/public/apple watch.jpg'
+            src='/headphone.jpg'
             alt=''
             className='h-full w-full object-cover'
           />
           <div className='absolute bottom-0 p-5'>
-            <p className='mb-4 text-2xl font-semibold uppercase'>Watch</p>
+            <p className='mb-4 text-2xl font-semibold uppercase'>Headphones</p>
             <button className='bg-white px-4 py-2 uppercase'>Explore</button>
           </div>
         </div>
         <div className='relative border'>
           <img
-            src='/public/apple watch.jpg'
+            src='/apple watch.jpg'
             alt=''
             className='h-full w-full object-cover'
           />

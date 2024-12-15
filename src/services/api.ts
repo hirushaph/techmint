@@ -82,7 +82,7 @@ export async function getBrands(): Promise<Brands[]> {
 
 export async function getSingleProduct(
   slug: string
-): Promise<SingleProduct | null> {
+): Promise<SingleProduct | undefined> {
   const itemsRef = collection(db, 'products');
 
   const q = query(itemsRef, where('slug', '==', slug));
@@ -90,7 +90,7 @@ export async function getSingleProduct(
   const querySnapshot = await getDocs(q);
 
   if (querySnapshot.empty) {
-    return null;
+    return undefined;
   }
 
   // console.log(querySnapshot.docs[0].data());

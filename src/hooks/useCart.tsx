@@ -1,47 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { CartItem } from '../types/types';
+import { RootStateType } from '../redux/store';
+import { addToCart, clearCart, removeFromCart } from '../redux/cartSlice';
 
 function useCart() {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const cart = useSelector((state: RootStateType) => state.cart.cart);
+  const dispatch = useDispatch();
 
-  useEffect(function () {
-    const storedCart = localStorage.getItem('cart');
-    if (storedCart) {
-      setCart(JSON.parse(storedCart));
-    }
-  }, []);
+  const add = (item: CartItem) => dispatch(addToCart(item));
+  const remove = (slug: string) => dispatch(removeFromCart(slug));
+  const clear = () => dispatch(clearCart());
 
-  useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }, [cart]);
-
-  function addToCart(item: CartItem) {
-    setCart((prevCart: CartItem[]) => {
-      const existingItem = prevCart.find(
-        (cartItem) => cartItem.sku === item.sku
-      );
-
-      if (existingItem) {
-        return prevCart.map((cartItem) =>
-          cartItem.sku === item.sku
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
-        );
-      } else {
-        return [...prevCart, item];
-      }
-    });
-  }
-
-  const removeFromCart = (id: string) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-  };
-
-  const clearCart = () => {
-    setCart([]);
-  };
-
-  return { cart, addToCart, removeFromCart, clearCart };
+  return { cart, addToCart: add, removeFromCart: remove, clearCart: clear };
 }
 
 export default useCart;

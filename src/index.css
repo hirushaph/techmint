@@ -250,3 +250,11 @@ input.no-spinner::-webkit-inner-spin-button {
 input[type='number'].no-spinner {
   -moz-appearance: textfield;
 }
+
+@media (max-width: 1023px) {
+  /* Styles for screens smaller than 1024px */
+  .swiper {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}

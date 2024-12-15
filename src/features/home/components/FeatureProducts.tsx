@@ -5,10 +5,10 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { useState } from 'react';
 import { getFeatured, getSliders } from '../../../services/api';
 import { useQuery } from '@tanstack/react-query';
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 function FeatureProducts() {
   // const [sliders, setSliders] = useState<Sliders>([]);
@@ -48,7 +48,7 @@ function FeatureProducts() {
 
   return (
     <section className='mt-4'>
-      <div className='slider group relative h-full w-full'>
+      <div className='slider group relative h-[200px] w-full lg:h-full'>
         <Swiper
           slidesPerView={1}
           spaceBetween={0}
@@ -83,18 +83,18 @@ function FeatureProducts() {
                   className='h-full w-full object-cover'
                 />
                 <div
-                  className={`${sliderIndex === index ? 'animate-text' : ''} slider-text absolute top-0 flex h-full w-1/2 flex-col justify-center px-12 py-6`}
+                  className={`${sliderIndex === index ? 'animate-text' : ''} slider-text absolute top-0 flex h-[100%] w-1/2 flex-col justify-center px-12 py-6`}
                 >
-                  <p className=' tagline xl:text-md text-sm uppercase tracking-wider opacity-0'>
+                  <p className='tagline xl:text-md text-sm uppercase tracking-wider opacity-0'>
                     {slider.tagline}
                   </p>
-                  <h2 className='title mt-2 text-3xl font-semibold uppercase opacity-0 lg:mt-4 xl:text-5xl '>
+                  <h2 className='title mt-2 text-3xl font-semibold uppercase opacity-0 lg:mt-4 xl:text-5xl'>
                     {slider.title}
                   </h2>
-                  <p className='description text-md mt-2 font-light opacity-0 lg:mt-6 xl:text-lg'>
+                  <p className='description text-md mt-2 hidden font-light opacity-0 lg:mt-6 lg:block xl:text-lg'>
                     {slider.description}
                   </p>
-                  <button className=' mt-4 self-start bg-white px-4 py-1 opacity-0 lg:mt-14 xl:px-6 xl:py-2 '>
+                  <button className='mt-4 self-start bg-white px-4 py-1 opacity-0 lg:mt-14 xl:px-6 xl:py-2'>
                     Show Now
                   </button>
                 </div>
@@ -102,15 +102,15 @@ function FeatureProducts() {
             ))}
 
           <div className='button-next absolute right-0 top-1/2 z-10 translate-y-[-50%] cursor-pointer pr-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-            <FaArrowRight className='text-2xl text-white' />
+            <MdArrowForwardIos className='text-2xl text-white' />
           </div>
           <div className='button-prev absolute top-1/2 z-10 translate-y-[-50%] cursor-pointer pl-6 opacity-0 transition-opacity duration-300 hover:opacity-100 group-hover:opacity-100'>
-            <FaArrowLeft className='text-2xl text-white' />
+            <MdArrowBackIos className='text-2xl text-white' />
           </div>
         </Swiper>
       </div>
 
-      <div className=' mt-7 flex flex-col justify-center gap-7 lg:flex-row'>
+      <div className='mt-7 flex flex-col justify-center gap-7 lg:flex-row'>
         {featured?.map((product) => (
           <div
             key={product.image}
@@ -122,10 +122,10 @@ function FeatureProducts() {
               className='h-full w-full object-cover transition duration-500 group-hover:scale-110'
             />
             <div className='featured-text absolute top-0 flex h-full flex-col justify-center gap-16 px-10 py-6'>
-              <h2 className='text-3xl font-semibold uppercase'>
+              <h2 className='text-md font-semibold uppercase lg:text-3xl'>
                 {product.title}
               </h2>
-              <button className='self-start bg-white px-8 py-2 uppercase'>
+              <button className='self-start bg-white px-4 py-2 uppercase lg:px-8 lg:py-2'>
                 Shop Now
               </button>
             </div>

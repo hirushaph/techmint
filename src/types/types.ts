@@ -57,6 +57,7 @@ type Category = {
 
 export type CartItem = {
   id: string;
+  name: string;
   slug: string;
   discount: number;
   quantity: number;

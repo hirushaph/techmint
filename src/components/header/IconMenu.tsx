@@ -3,6 +3,8 @@ import { VscAccount } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import DarkMode from './DarkMode';
 import MobileHamburger from './MobileHamburger';
+import useCart from '../../hooks/useCart';
+import { getSubTotal } from '../../utils/helpers';
 
 type IconMenuProps = {
   setShowMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
@@ -10,6 +12,8 @@ type IconMenuProps = {
 };
 
 function IconMenu({ setShowMobileMenu, showMobileMenu }: IconMenuProps) {
+  const { cart } = useCart();
+
   return (
     <div className='header-icons flex items-center gap-4 justify-self-end'>
       <DarkMode className='hidden xl:flex' />
@@ -21,7 +25,9 @@ function IconMenu({ setShowMobileMenu, showMobileMenu }: IconMenuProps) {
       <Link to='/cart'>
         <div className='flex cursor-pointer items-center gap-3 rounded-3xl border-2 px-3 py-[6px] transition hover:shadow-md'>
           <RiShoppingCart2Line className='' color='#6b7280 ' />
-          <span className='text-sm font-semibold text-gray-500'>180$</span>
+          <span className='text-[12px] font-semibold text-gray-500'>
+            {getSubTotal(cart)}$
+          </span>
         </div>
       </Link>
       <MobileHamburger

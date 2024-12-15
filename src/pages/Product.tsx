@@ -15,10 +15,12 @@ import useProductFilter from '../hooks/useProductFilter';
 import Spinner from '../components/Spinner';
 import Breadcrumbs from '../components/Breadcrumbs';
 import { calculateDisountPrice, isArrayUndefined } from '../utils/helpers';
+import AddToCart from '../components/AddToCart';
 
 function Product() {
   const { color: selectedColor, storage: selectedStorage } = useProductFilter();
   const [selectedVarient, setSelectedVarient] = useState<any | null>(null);
+  const [itemCount, setItemCount] = useState<number>(1);
   const { productId } = useParams();
 
   const navigate = useNavigate();
@@ -117,9 +119,19 @@ function Product() {
           {!isArrayUndefined(storage) && <SelectorSet storage={storage} />}
 
           <ColorSelector className='mt-5' color={colors} />
-          <StockSelector selectedVarient={selectedVarient} />
+          <StockSelector
+            selectedVarient={selectedVarient}
+            itemCount={itemCount}
+            setItemCount={setItemCount}
+          />
           {/* TODO Code storage select box and color selectbox */}
-          <Button disabled={selectedVarient ? false : true}>Add To Cart</Button>
+          <AddToCart
+            product={currentProduct}
+            selectedVarient={selectedVarient}
+            quantity={itemCount}
+          >
+            Add To Cart
+          </AddToCart>
         </div>
       </div>
       {/* Additional details */}

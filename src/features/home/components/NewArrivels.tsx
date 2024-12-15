@@ -55,7 +55,7 @@ function NewArrivels() {
       </div>
 
       {/* Products Grid */}
-      <div className='h-[310px]'>
+      <div className='lg:h-[310px]'>
         {isLoading && <Spinner className='h-[100%]' />}
         {filterdProducts && (
           <div className='mt-12 grid grid-cols-2 gap-8 lg:grid-cols-5'>
