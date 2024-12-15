@@ -55,6 +55,13 @@ type Category = {
   categoryName: string;
 };
 
+export type CartItem = {
+  id: string;
+  slug: string;
+  discount: number;
+  quantity: number;
+} & Variants;
+
 type Variants = {
   color: string;
   hex: string;
