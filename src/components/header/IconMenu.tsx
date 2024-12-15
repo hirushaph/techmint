@@ -18,10 +18,12 @@ function IconMenu({ setShowMobileMenu, showMobileMenu }: IconMenuProps) {
           <VscAccount className='header-icon text-2xl' />
         </span>
       </Link>
-      <div className='flex cursor-pointer items-center gap-3 rounded-3xl border-2 px-3 py-[6px] transition hover:shadow-md'>
-        <RiShoppingCart2Line className='' color='#6b7280 ' />
-        <span className='text-sm font-semibold text-gray-500'>180$</span>
-      </div>
+      <Link to='/cart'>
+        <div className='flex cursor-pointer items-center gap-3 rounded-3xl border-2 px-3 py-[6px] transition hover:shadow-md'>
+          <RiShoppingCart2Line className='' color='#6b7280 ' />
+          <span className='text-sm font-semibold text-gray-500'>180$</span>
+        </div>
+      </Link>
       <MobileHamburger
         setShowMobileMenu={setShowMobileMenu}
         showMobileMenu={showMobileMenu}
